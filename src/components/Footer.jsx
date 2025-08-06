@@ -11,12 +11,12 @@ const Footer = () => {
     {
       icon: MapPin,
       title: t("contact.address"),
-      content: "Av. Principal, Centro Histórico\nCaracas, Venezuela",
+      content: "Plaza de La Encarnación\nSevilla, España",
     },
     {
       icon: Phone,
       title: t("contact.phone"),
-      content: "+58 212 555-0123",
+      content: "+34 605 25 29 28",
     },
     {
       icon: Mail,
@@ -31,9 +31,7 @@ const Footer = () => {
   ]
 
   const socialLinks = [
-    { icon: Instagram, href: "#", label: "Instagram" },
-    { icon: Facebook, href: "#", label: "Facebook" },
-    { icon: Twitter, href: "#", label: "Twitter" },
+    { icon: Instagram, href: "https://www.instagram.com/gastrobartepuy", label: "Instagram" },
   ]
 
   return (

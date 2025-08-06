@@ -42,28 +42,28 @@ const HomePage = ({ setCurrentPage }) => {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <div className="flex flex-col items-center">
-              <span className="text-4xl md:text-5xl font-sans font-bold text-white tracking-wide mb-2">GASTROBAR</span>
-              <span className="text-2xl md:text-3xl font-sans font-medium text-white/90 tracking-widest">TEPUY</span>
+              <span className="text-4xl md:text-6xl font-sans font-medium text-white tracking-wide mb-2">GASTROBAR</span>
+              <span className="text-2xl md:text-9xl font-sans font-bold text-white/90 tracking-widest">TEPUY</span>
             </div>
           </motion.div>
 
-          <motion.h1
+          {/* <motion.h1
             className="font-sans text-3xl md:text-5xl lg:text-6xl font-light mb-8 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
             {t("hero.title")}
-          </motion.h1>
+          </motion.h1> */}
 
-          <motion.p
+          {/* <motion.p
             className="text-xl md:text-2xl mb-12 font-light leading-relaxed max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
           >
             {t("hero.subtitle")}
-          </motion.p>
+          </motion.p> */}
 
           <motion.button
             onClick={() => setCurrentPage("reservations")}
