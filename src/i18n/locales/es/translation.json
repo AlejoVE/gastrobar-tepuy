@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "book": "Reservar",
+    "language": "Idioma",
+    "menu": "Menú"
+  },
+  "hero": {
+    "title": "Gastrobar Tepuy",
+    "subtitle": "Una experiencia culinaria única en el corazón de Caracas",
+    "cta": "Reservar Mesa"
+  },
+  "about": {
+    "title": "Nuestra Filosofía",
+    "description": "En Gastrobar Tepuy, fusionamos la tradición culinaria venezolana con técnicas gastronómicas contemporáneas, creando una experiencia única que celebra los sabores auténticos de nuestra tierra.",
+    "feature1": {
+      "title": "Ingredientes Locales",
+      "description": "Seleccionamos cuidadosamente los mejores productos locales para garantizar frescura y calidad en cada plato."
+    },
+    "feature2": {
+      "title": "Técnicas Modernas",
+      "description": "Aplicamos técnicas culinarias innovadoras para realzar los sabores tradicionales de manera contemporánea."
+    },
+    "feature3": {
+      "title": "Ambiente Único",
+      "description": "Un espacio diseñado para crear momentos memorables, donde cada detalle contribuye a una experiencia excepcional."
+    }
+  },
+  "menu": {
+    "title": "Nuestra Carta",
+    "subtitle": "Descubre una selección cuidadosamente curada de platos que celebran la riqueza gastronómica venezolana",
+    "appetizers": {
+      "title": "Para Abrir Boca",
+      "item1": {
+        "name": "Ensaladilla \"Guayanesa\" con tartar de gamba blanca",
+        "description": "Nuestra versión de la ensaladilla rusa con un toque tropical y tartar de gamba fresca",
+        "price": "€3.80 / €7.50"
+      },
+      "item2": {
+        "name": "Papas Aliñás \"Macuro\" con melva canutera",
+        "description": "Papas aliñadas al estilo venezolano acompañadas de melva canutera",
+        "price": "€3.50 / €6.50"
+      },
+      "item3": {
+        "name": "Salmorejo de remolacha con queso de cabra",
+        "description": "Cremoso salmorejo de remolacha coronado con queso de cabra artesanal",
+        "price": "€4.00 / €7.50"
+      },
+      "item4": {
+        "name": "Tiradito de corvina al estilo \"Nikkei\"",
+        "description": "Finas láminas de corvina marinadas con técnica nikkei",
+        "price": "€12.00"
+      }
+    },
+    "mains": {
+      "title": "Fritura Viajera & Platillos con Alma",
+      "item1": {
+        "name": "Croquetas de puchero con alioli de kimchi",
+        "description": "Croquetas cremosas de puchero acompañadas de alioli de kimchi",
+        "price": "€3.50 / €6.50"
+      },
+      "item2": {
+        "name": "Tequeños venezolanos con melao de papelón",
+        "description": "Auténticos tequeños venezolanos servidos con melao de papelón",
+        "price": "€4.00 / €7.50"
+      },
+      "item3": {
+        "name": "Bao de Pringá Sevillana",
+        "description": "Pan bao relleno de pringá sevillana tradicional",
+        "price": "€5.50"
+      },
+      "item4": {
+        "name": "Carrillada ibérica al \"Asado Negro\"",
+        "description": "Tierna carrillada ibérica cocinada al estilo del asado negro venezolano",
+        "price": "€5.00 / €9.80"
+      }
+    },
+    "grilled": {
+      "title": "Nuestra Brasa",
+      "item1": {
+        "name": "Presa Ibérica de Bellota con chimichurri andaluz",
+        "description": "Jugosa presa ibérica de bellota acompañada de chimichurri con toque andaluz",
+        "price": "€19.50"
+      },
+      "item2": {
+        "name": "Entraña de ternera con yuca frita y guasacaca",
+        "description": "Entraña de ternera a la brasa con yuca frita y salsa guasacaca",
+        "price": "€16.50"
+      },
+      "item3": {
+        "name": "Lomo de corvina a la brasa \"a la espalda\"",
+        "description": "Lomo de corvina cocinado a la brasa con técnica tradicional",
+        "price": "€17.50"
+      }
+    },
+    "desserts": {
+      "title": "El Momento Dulce",
+      "item1": {
+        "name": "Coulant de Chocolate y Dulce de Leche",
+        "description": "Coulant de chocolate con corazón de dulce de leche",
+        "price": "€6.50"
+      },
+      "item2": {
+        "name": "Torrija \"Tepuy\" de Pan Brioche Caramelizada",
+        "description": "Torrija de pan brioche caramelizada con toque especial de la casa",
+        "price": "€6.00"
+      },
+      "item3": {
+        "name": "Nube de Coco y Guayaba",
+        "description": "Postre aéreo de coco con esencia de guayaba",
+        "price": "€6.00"
+      }
+    },
+    "drinks": {
+      "title": "Carta de Bebidas",
+      "beer": {
+        "title": "Cervezas",
+        "item1": "Copa de Cerveza de Barril (33 cl) - €2.80",
+        "item2": "Tanque / Jarra (50 cl) - €5.00",
+        "item3": "Tercio de Cerveza Nacional Premium - €3.80"
+      },
+      "wine": {
+        "title": "Vinos por Copa",
+        "item1": "Vino Blanco (Verdejo, Rueda) - €2.80",
+        "item2": "Vino Tinto (Rioja Crianza) - €3.00",
+        "item3": "Vino Premium del Mes - €3.50"
+      },
+      "cocktails": {
+        "title": "Nuestros Cócteles de Autor",
+        "item1": "Mojito de Parchita (Maracuyá) - €8.50",
+        "item2": "Atardecer en Tepuy - €9.00",
+        "item3": "Tepuy Spritz - €8.00"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Galería",
+    "subtitle": "Descubre la belleza de nuestros platos y el ambiente acogedor de nuestro restaurante",
+    "image1": "Presentación artística de nuestros platos",
+    "image2": "Ambiente cálido y elegante del restaurante",
+    "image3": "Arte culinario en cada preparación",
+    "image4": "Nuestra barra de cócteles artesanales",
+    "image5": "Nuestro amable personal",
+    "image6": "Terraza al aire libre"
+  },
+  "contact": {
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Correo",
+    "hours": "Horarios",
+    "schedule": "Mar-Dom: 12:00-15:00, 19:00-23:00\nLunes: Cerrado"
+  },
+  "footer": {
+    "description": "Gastrobar Tepuy es más que un restaurante, es un homenaje a la rica tradición culinaria venezolana reimaginada para el paladar contemporáneo.",
+    "rights": "Todos los derechos reservados."
+  },
+  "reservations": {
+    "title": "Reservar Mesa",
+    "subtitle": "Reserve su mesa y viva una experiencia gastronómica inolvidable",
+    "back": "Volver al inicio",
+    "previous": "Anterior",
+    "next": "Siguiente",
+    "confirm": "Confirmar Reserva",
+    "step1": {
+      "title": "Seleccione la Fecha"
+    },
+    "step2": {
+      "title": "Detalles de la Reserva",
+      "name": "Nombre Completo",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "guests": "Número de Comensales",
+      "people": "personas",
+      "time": "Hora Preferida",
+      "requests": "Solicitudes Especiales",
+      "requestsPlaceholder": "Alergias, celebraciones especiales, etc."
+    },
+    "step3": {
+      "title": "Información de Pago",
+      "disclaimer": "SIMULACIÓN:",
+      "disclaimerText": "Este es un formulario de demostración. No ingrese información real de tarjetas de crédito.",
+      "cardNumber": "Número de Tarjeta",
+      "expiry": "Fecha de Vencimiento",
+      "cvv": "CVV",
+      "cardName": "Nombre en la Tarjeta",
+      "cardNamePlaceholder": "Como aparece en la tarjeta",
+      "summary": "Resumen de la Reserva",
+      "date": "Fecha",
+      "time": "Hora",
+      "guests": "Comensales",
+      "deposit": "Depósito"
+    },
+    "step4": {
+      "title": "¡Reserva Confirmada!",
+      "message": "Su reserva ha sido confirmada exitosamente. Recibirá un correo de confirmación en breve.",
+      "details": "Detalles de la Reserva",
+      "confirmation": "Confirmación",
+      "home": "Volver al Inicio"
+    }
+  },
+  "calendar": {
+    "previousMonth": "Mes anterior",
+    "nextMonth": "Mes siguiente",
+    "selected": "Fecha seleccionada",
+    "today": "Hoy",
+    "unavailable": "No disponible",
+    "closedMondays": "Cerrado los lunes"
+  }
+}

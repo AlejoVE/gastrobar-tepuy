@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
+    color: #2c2c2c;
+    background-color: #ffffff;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-forest-green text-white px-8 py-4 rounded-xl font-sans font-semibold hover:bg-forest-green/90 transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center shadow-lg hover:shadow-xl;
+  }
+
+  .btn-secondary {
+    @apply bg-sage-green text-white px-6 py-3 rounded-xl font-sans font-medium hover:bg-sage-green/90 transition-all duration-300 inline-flex items-center justify-center;
+  }
+
+  .section-padding {
+    @apply px-6 sm:px-8 lg:px-12 py-20 lg:py-32;
+  }
+
+  .section-spacing {
+    @apply mb-16 lg:mb-24;
+  }
+
+  .container {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  .text-body {
+    @apply text-lg leading-relaxed;
+  }
+
+  .text-body-large {
+    @apply text-xl leading-relaxed;
+  }
+
+  .section-divider {
+    @apply h-px bg-gradient-to-r from-transparent via-sage-green/30 to-transparent my-16 lg:my-24;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}

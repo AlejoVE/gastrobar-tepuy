@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "home": "Home",
+    "book": "Book Table",
+    "language": "Language",
+    "menu": "Menu"
+  },
+  "hero": {
+    "title": "Gastrobar Tepuy",
+    "subtitle": "A unique culinary experience in the heart of Caracas",
+    "cta": "Book a Table"
+  },
+  "about": {
+    "title": "Our Philosophy",
+    "description": "At Gastrobar Tepuy, we fuse Venezuelan culinary tradition with contemporary gastronomic techniques, creating a unique experience that celebrates the authentic flavors of our land.",
+    "feature1": {
+      "title": "Local Ingredients",
+      "description": "We carefully select the best local products to guarantee freshness and quality in every dish."
+    },
+    "feature2": {
+      "title": "Modern Techniques",
+      "description": "We apply innovative culinary techniques to enhance traditional flavors in a contemporary way."
+    },
+    "feature3": {
+      "title": "Unique Atmosphere",
+      "description": "A space designed to create memorable moments, where every detail contributes to an exceptional experience."
+    }
+  },
+  "menu": {
+    "title": "Our Menu",
+    "subtitle": "Discover a carefully curated selection of dishes that celebrate Venezuelan gastronomic richness",
+    "appetizers": {
+      "title": "To Start",
+      "item1": {
+        "name": "\"Guayanesa\" Potato Salad with white shrimp tartar",
+        "description": "Our version of Russian salad with a tropical touch and fresh shrimp tartar",
+        "price": "€3.80 / €7.50"
+      },
+      "item2": {
+        "name": "\"Macuro\" Seasoned Potatoes with canned tuna",
+        "description": "Venezuelan-style seasoned potatoes accompanied by canned tuna",
+        "price": "€3.50 / €6.50"
+      },
+      "item3": {
+        "name": "Beetroot Salmorejo with goat cheese",
+        "description": "Creamy beetroot salmorejo topped with artisanal goat cheese",
+        "price": "€4.00 / €7.50"
+      },
+      "item4": {
+        "name": "Sea bass Tiradito \"Nikkei\" style",
+        "description": "Thin slices of sea bass marinated with nikkei technique",
+        "price": "€12.00"
+      }
+    },
+    "mains": {
+      "title": "Traveling Fritters & Soulful Dishes",
+      "item1": {
+        "name": "Stew croquettes with kimchi aioli",
+        "description": "Creamy stew croquettes accompanied by kimchi aioli",
+        "price": "€3.50 / €6.50"
+      },
+      "item2": {
+        "name": "Venezuelan tequeños with papelón syrup",
+        "description": "Authentic Venezuelan tequeños served with papelón syrup",
+        "price": "€4.00 / €7.50"
+      },
+      "item3": {
+        "name": "Sevillian Pringá Bao",
+        "description": "Bao bread filled with traditional Sevillian pringá",
+        "price": "€5.50"
+      },
+      "item4": {
+        "name": "Iberian cheek \"Asado Negro\" style",
+        "description": "Tender Iberian cheek cooked in Venezuelan asado negro style",
+        "price": "€5.00 / €9.80"
+      }
+    },
+    "grilled": {
+      "title": "Our Grill",
+      "item1": {
+        "name": "Acorn-fed Iberian Presa with Andalusian chimichurri",
+        "description": "Juicy acorn-fed Iberian presa accompanied by chimichurri with Andalusian touch",
+        "price": "€19.50"
+      },
+      "item2": {
+        "name": "Beef skirt steak with fried yuca and guasacaca",
+        "description": "Grilled beef skirt steak with fried yuca and guasacaca sauce",
+        "price": "€16.50"
+      },
+      "item3": {
+        "name": "Grilled sea bass loin \"a la espalda\"",
+        "description": "Sea bass loin cooked on the grill with traditional technique",
+        "price": "€17.50"
+      }
+    },
+    "desserts": {
+      "title": "Sweet Moments",
+      "item1": {
+        "name": "Chocolate and Dulce de Leche Coulant",
+        "description": "Chocolate coulant with dulce de leche heart",
+        "price": "€6.50"
+      },
+      "item2": {
+        "name": "\"Tepuy\" Caramelized Brioche French Toast",
+        "description": "Caramelized brioche French toast with special house touch",
+        "price": "€6.00"
+      },
+      "item3": {
+        "name": "Coconut and Guava Cloud",
+        "description": "Airy coconut dessert with guava essence",
+        "price": "€6.00"
+      }
+    },
+    "drinks": {
+      "title": "Drinks Menu",
+      "beer": {
+        "title": "Beers",
+        "item1": "Draft Beer Glass (33 cl) - €2.80",
+        "item2": "Tank / Pitcher (50 cl) - €5.00",
+        "item3": "Premium National Beer - €3.80"
+      },
+      "wine": {
+        "title": "Wines by Glass",
+        "item1": "White Wine (Verdejo, Rueda) - €2.80",
+        "item2": "Red Wine (Rioja Crianza) - €3.00",
+        "item3": "Premium Wine of the Month - €3.50"
+      },
+      "cocktails": {
+        "title": "Our Signature Cocktails",
+        "item1": "Passion Fruit Mojito - €8.50",
+        "item2": "Tepuy Sunset - €9.00",
+        "item3": "Tepuy Spritz - €8.00"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Gallery",
+    "subtitle": "Discover the beauty of our dishes and the cozy atmosphere of our restaurant",
+    "image1": "Artistic presentation of our dishes",
+    "image2": "Warm and elegant restaurant atmosphere",
+    "image3": "Culinary art in every preparation",
+    "image4": "Our artisanal cocktail bar",
+    "image5": "Our kind staff",
+    "image6": "Outdoor terrace"
+  },
+  "contact": {
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "hours": "Hours",
+    "schedule": "Tue-Sun: 12:00-15:00, 19:00-23:00\nMonday: Closed"
+  },
+  "footer": {
+    "description": "Gastrobar Tepuy is more than a restaurant, it's a tribute to the rich Venezuelan culinary tradition reimagined for the contemporary palate.",
+    "rights": "All rights reserved."
+  },
+  "reservations": {
+    "title": "Book a Table",
+    "subtitle": "Reserve your table and experience an unforgettable gastronomic journey",
+    "back": "Back to home",
+    "previous": "Previous",
+    "next": "Next",
+    "confirm": "Confirm Reservation",
+    "step1": {
+      "title": "Select Date"
+    },
+    "step2": {
+      "title": "Reservation Details",
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "guests": "Number of Guests",
+      "people": "people",
+      "time": "Preferred Time",
+      "requests": "Special Requests",
+      "requestsPlaceholder": "Allergies, special celebrations, etc."
+    },
+    "step3": {
+      "title": "Payment Information",
+      "disclaimer": "SIMULATION:",
+      "disclaimerText": "This is a demonstration form. Do not enter real credit card information.",
+      "cardNumber": "Card Number",
+      "expiry": "Expiry Date",
+      "cvv": "CVV",
+      "cardName": "Name on Card",
+      "cardNamePlaceholder": "As it appears on the card",
+      "summary": "Reservation Summary",
+      "date": "Date",
+      "time": "Time",
+      "guests": "Guests",
+      "deposit": "Deposit"
+    },
+    "step4": {
+      "title": "Reservation Confirmed!",
+      "message": "Your reservation has been successfully confirmed. You will receive a confirmation email shortly.",
+      "details": "Reservation Details",
+      "confirmation": "Confirmation",
+      "home": "Back to Home"
+    }
+  },
+  "calendar": {
+    "previousMonth": "Previous month",
+    "nextMonth": "Next month",
+    "selected": "Selected date",
+    "today": "Today",
+    "unavailable": "Unavailable",
+    "closedMondays": "Closed on Mondays"
+  }
+}

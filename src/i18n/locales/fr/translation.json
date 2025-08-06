@@ -1,0 +1,209 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "book": "Réserver",
+    "language": "Langue",
+    "menu": "Menu"
+  },
+  "hero": {
+    "title": "Gastrobar Tepuy",
+    "subtitle": "Une expérience culinaire unique au cœur de Caracas",
+    "cta": "Réserver une Table"
+  },
+  "about": {
+    "title": "Notre Philosophie",
+    "description": "Chez Gastrobar Tepuy, nous fusionnons la tradition culinaire vénézuélienne avec des techniques gastronomiques contemporaines, créant une expérience unique qui célèbre les saveurs authentiques de notre terre.",
+    "feature1": {
+      "title": "Ingrédients Locaux",
+      "description": "Nous sélectionnons soigneusement les meilleurs produits locaux pour garantir fraîcheur et qualité dans chaque plat."
+    },
+    "feature2": {
+      "title": "Techniques Modernes",
+      "description": "Nous appliquons des techniques culinaires innovantes pour rehausser les saveurs traditionnelles de manière contemporaine."
+    },
+    "feature3": {
+      "title": "Atmosphère Unique",
+      "description": "Un espace conçu pour créer des moments mémorables, où chaque détail contribue à une expérience exceptionnelle."
+    }
+  },
+  "menu": {
+    "title": "Notre Carte",
+    "subtitle": "Découvrez une sélection soigneusement élaborée de plats qui célèbrent la richesse gastronomique vénézuélienne",
+    "appetizers": {
+      "title": "Pour Commencer",
+      "item1": {
+        "name": "Salade de pommes de terre \"Guayanesa\" avec tartare de crevettes blanches",
+        "description": "Notre version de la salade russe avec une touche tropicale et tartare de crevettes fraîches",
+        "price": "€3.80 / €7.50"
+      },
+      "item2": {
+        "name": "Pommes de terre assaisonnées \"Macuro\" avec thon en conserve",
+        "description": "Pommes de terre assaisonnées à la vénézuélienne accompagnées de thon en conserve",
+        "price": "€3.50 / €6.50"
+      },
+      "item3": {
+        "name": "Salmorejo de betterave avec fromage de chèvre",
+        "description": "Salmorejo crémeux de betterave couronné de fromage de chèvre artisanal",
+        "price": "€4.00 / €7.50"
+      },
+      "item4": {
+        "name": "Tiradito de bar style \"Nikkei\"",
+        "description": "Fines tranches de bar marinées avec la technique nikkei",
+        "price": "€12.00"
+      }
+    },
+    "mains": {
+      "title": "Friture Voyageuse & Plats avec Âme",
+      "item1": {
+        "name": "Croquettes de pot-au-feu avec aïoli de kimchi",
+        "description": "Croquettes crémeuses de pot-au-feu accompagnées d'aïoli de kimchi",
+        "price": "€3.50 / €6.50"
+      },
+      "item2": {
+        "name": "Tequeños vénézuéliens avec sirop de papelón",
+        "description": "Authentiques tequeños vénézuéliens servis avec sirop de papelón",
+        "price": "€4.00 / €7.50"
+      },
+      "item3": {
+        "name": "Bao de Pringá Sévillane",
+        "description": "Pain bao farci de pringá sévillane traditionnelle",
+        "price": "€5.50"
+      },
+      "item4": {
+        "name": "Joue ibérique style \"Asado Negro\"",
+        "description": "Joue ibérique tendre cuisinée dans le style de l'asado negro vénézuélien",
+        "price": "€5.00 / €9.80"
+      }
+    },
+    "grilled": {
+      "title": "Notre Grill",
+      "item1": {
+        "name": "Presa Ibérique de Bellota avec chimichurri andalou",
+        "description": "Presa ibérique de bellota juteuse accompagnée de chimichurri avec touche andalouse",
+        "price": "€19.50"
+      },
+      "item2": {
+        "name": "Bavette de bœuf avec yuca frite et guasacaca",
+        "description": "Bavette de bœuf grillée avec yuca frite et sauce guasacaca",
+        "price": "€16.50"
+      },
+      "item3": {
+        "name": "Filet de bar grillé \"a la espalda\"",
+        "description": "Filet de bar cuit au grill avec technique traditionnelle",
+        "price": "€17.50"
+      }
+    },
+    "desserts": {
+      "title": "Moments Sucrés",
+      "item1": {
+        "name": "Coulant au Chocolat et Dulce de Leche",
+        "description": "Coulant au chocolat avec cœur de dulce de leche",
+        "price": "€6.50"
+      },
+      "item2": {
+        "name": "Pain perdu \"Tepuy\" de Pain Brioche Caramélisé",
+        "description": "Pain perdu de brioche caramélisé avec touche spéciale de la maison",
+        "price": "€6.00"
+      },
+      "item3": {
+        "name": "Nuage de Coco et Goyave",
+        "description": "Dessert aérien de coco avec essence de goyave",
+        "price": "€6.00"
+      }
+    },
+    "drinks": {
+      "title": "Carte des Boissons",
+      "beer": {
+        "title": "Bières",
+        "item1": "Verre de Bière Pression (33 cl) - €2.80",
+        "item2": "Chope / Pichet (50 cl) - €5.00",
+        "item3": "Bière Nationale Premium - €3.80"
+      },
+      "wine": {
+        "title": "Vins au Verre",
+        "item1": "Vin Blanc (Verdejo, Rueda) - €2.80",
+        "item2": "Vin Rouge (Rioja Crianza) - €3.00",
+        "item3": "Vin Premium du Mois - €3.50"
+      },
+      "cocktails": {
+        "title": "Nos Cocktails Signature",
+        "item1": "Mojito de Fruit de la Passion - €8.50",
+        "item2": "Coucher de Soleil Tepuy - €9.00",
+        "item3": "Tepuy Spritz - €8.00"
+      }
+    }
+  },
+  "gallery": {
+    "title": "Galerie",
+    "subtitle": "Découvrez la beauté de nos plats et l'atmosphère chaleureuse de notre restaurant",
+    "image1": "Présentation artistique de nos plats",
+    "image2": "Atmosphère chaleureuse et élégante du restaurant",
+    "image3": "Art culinaire dans chaque préparation",
+    "image4": "Notre bar à cocktails artisanaux",
+    "image5": "Notre personnel aimable",
+    "image6": "Terrasse extérieure"
+  },
+  "contact": {
+    "address": "Adresse",
+    "phone": "Téléphone",
+    "email": "Email",
+    "hours": "Horaires",
+    "schedule": "Mar-Dim: 12:00-15:00, 19:00-23:00\nLundi: Fermé"
+  },
+  "footer": {
+    "description": "Gastrobar Tepuy est plus qu'un restaurant, c'est un hommage à la riche tradition culinaire vénézuélienne réimaginée pour le palais contemporain.",
+    "rights": "Tous droits réservés."
+  },
+  "reservations": {
+    "title": "Réserver une Table",
+    "subtitle": "Réservez votre table et vivez une expérience gastronomique inoubliable",
+    "back": "Retour à l'accueil",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "confirm": "Confirmer la Réservation",
+    "step1": {
+      "title": "Sélectionner la Date"
+    },
+    "step2": {
+      "title": "Détails de la Réservation",
+      "name": "Nom Complet",
+      "email": "Adresse Email",
+      "phone": "Numéro de Téléphone",
+      "guests": "Nombre de Convives",
+      "people": "personnes",
+      "time": "Heure Préférée",
+      "requests": "Demandes Spéciales",
+      "requestsPlaceholder": "Allergies, célébrations spéciales, etc."
+    },
+    "step3": {
+      "title": "Informations de Paiement",
+      "disclaimer": "SIMULATION :",
+      "disclaimerText": "Ceci est un formulaire de démonstration. Ne saisissez pas de vraies informations de carte de crédit.",
+      "cardNumber": "Numéro de Carte",
+      "expiry": "Date d'Expiration",
+      "cvv": "CVV",
+      "cardName": "Nom sur la Carte",
+      "cardNamePlaceholder": "Tel qu'il apparaît sur la carte",
+      "summary": "Résumé de la Réservation",
+      "date": "Date",
+      "time": "Heure",
+      "guests": "Convives",
+      "deposit": "Acompte"
+    },
+    "step4": {
+      "title": "Réservation Confirmée !",
+      "message": "Votre réservation a été confirmée avec succès. Vous recevrez un email de confirmation sous peu.",
+      "details": "Détails de la Réservation",
+      "confirmation": "Confirmation",
+      "home": "Retour à l'Accueil"
+    }
+  },
+  "calendar": {
+    "previousMonth": "Mois précédent",
+    "nextMonth": "Mois suivant",
+    "selected": "Date sélectionnée",
+    "today": "Aujourd'hui",
+    "unavailable": "Non disponible",
+    "closedMondays": "Fermé le lundi"
+  }
+}
