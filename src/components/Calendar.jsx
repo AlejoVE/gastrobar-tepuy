@@ -73,9 +73,7 @@ const Calendar = ({ selectedDate, onDateSelect }) => {
   }
 
   const isDateAvailable = (date) => {
-    const dayOfWeek = date.getDay()
-    // Restaurant closed on Mondays (1)
-    return dayOfWeek !== 1 && date >= today
+    return date >= today
   }
 
   const isDateSelected = (date) => {
@@ -114,13 +112,12 @@ const Calendar = ({ selectedDate, onDateSelect }) => {
           key={day}
           onClick={() => handleDateClick(day)}
           disabled={!isAvailable}
-          className={`h-12 w-12 rounded-lg font-sans font-medium transition-colors ${
-            isSelected
-              ? "bg-forest-green text-white shadow-lg"
-              : isAvailable
-                ? "hover:bg-forest-green/20 hover:text-forest-green text-charcoal bg-white border border-sage-green/20"
-                : "text-gray-300 cursor-not-allowed bg-gray-50"
-          } ${isToday && !isSelected ? "ring-2 ring-natural-wood" : ""}`}
+          className={`h-12 w-12 rounded-lg font-sans font-medium transition-colors ${isSelected
+            ? "bg-forest-green text-white shadow-lg"
+            : isAvailable
+              ? "hover:bg-forest-green/20 hover:text-forest-green text-charcoal bg-white border border-sage-green/20"
+              : "text-gray-300 cursor-not-allowed bg-gray-50"
+            } ${isToday && !isSelected ? "ring-2 ring-natural-wood" : ""}`}
           whileHover={isAvailable ? { scale: 1.05 } : {}}
           whileTap={isAvailable ? { scale: 0.95 } : {}}
         >
@@ -184,7 +181,7 @@ const Calendar = ({ selectedDate, onDateSelect }) => {
           <div className="w-4 h-4 bg-gray-300 rounded"></div>
           <span>{t("calendar.unavailable")}</span>
         </div>
-        <p className="text-xs text-gray-500 mt-2">{t("calendar.closedMondays")}</p>
+        {/* <p className="text-xs text-gray-500 mt-2">{t("calendar.closedMondays")}</p> */}
       </div>
     </div>
   )
