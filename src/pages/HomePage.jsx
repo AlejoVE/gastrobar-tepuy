@@ -23,7 +23,7 @@ const HomePage = ({ setCurrentPage }) => {
         <div
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{
-            backgroundImage: `url('/images/terraza.png')`,
+            backgroundImage: `url('/images/terraza.avif')`,
           }}
         >
           <div className="absolute inset-0 bg-gradient-to-br from-forest-green/60 via-forest-green/40 to-sage-green/60"></div>

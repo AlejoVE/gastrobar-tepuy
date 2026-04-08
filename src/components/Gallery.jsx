@@ -1,6 +1,7 @@
 "use client"
 
 import { useTranslation } from "react-i18next"
+import Image from 'next/image';
 import { motion } from "framer-motion"
 
 const Gallery = () => {
@@ -8,27 +9,27 @@ const Gallery = () => {
 
   const galleryImages = [
     {
-      src: "/images/salmorejo.png",
+      src: "/images/salmorejo.avif",
       alt: t("gallery.image1"),
     },
     {
-      src: "/images/salon.png",
+      src: "/images/salon.avif",
       alt: t("gallery.image2"),
     },
     {
-      src: "/images/cocina.png",
+      src: "/images/cocina.avif",
       alt: t("gallery.image3"),
     },
     {
-      src: "/images/barra1.png",
+      src: "/images/barra1.avif",
       alt: t("gallery.image4"),
     },
     {
-      src: "/images/personal.png",
+      src: "/images/personal.avif",
       alt: t("gallery.image5"),
     },
     {
-      src: "/images/terraza.png",
+      src: "/images/terraza.avif",
       alt: t("gallery.image6"),
     },
   ]
@@ -59,9 +60,11 @@ const Gallery = () => {
               whileHover={{ scale: 1.03 }}
               className="relative overflow-hidden rounded-2xl shadow-lg group cursor-pointer bg-white"
             >
-              <img
+              <Image
                 src={image.src || "/placeholder.svg"}
                 alt={image.alt}
+                width={800}
+                height={600}
                 className="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-forest-green/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center">
