@@ -26,3 +26,6 @@ Thumbs.db
 # Directorios de producción/construcción
 dist/
 build/
+
+# Next.js
+.next
