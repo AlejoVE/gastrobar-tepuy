@@ -1,23 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { useTranslation } from "react-i18next"
+import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import Header from "./components/Header"
 import Footer from "./components/Footer"
 import HomePage from "./pages/HomePage"
 import ReservationsPage from "./pages/ReservationsPage"
-import "./i18n/i18n"
+
 import "./index.css"
 
 function App() {
   const [currentPage, setCurrentPage] = useState("home")
-  const { i18n } = useTranslation()
-
-  useEffect(() => {
-    // Set default language to Spanish
-    i18n.changeLanguage("es")
-  }, [i18n])
 
   return (
     <div className="min-h-screen bg-pure-white font-sans">
