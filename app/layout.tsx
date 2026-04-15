@@ -1,11 +1,9 @@
 import type React from 'react';
-import Script from 'next/script'; // ¡Ahora sí lo vamos a usar!
+import Script from 'next/script';
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 
-// Revisa el nombre y la ruta de tu CSS. Lo he cambiado a index.css basándome en tu captura anterior,
-// pero ajústalo si se llama diferente o está en otra carpeta (ej. '../index.css').
 // import './index.css';
 
 export const metadata: Metadata = {
@@ -28,16 +26,11 @@ export default function RootLayout({
 					href='https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap'
 					rel='stylesheet'
 				/>
-				{/* ¡ELIMINAMOS LA ETIQUETA <style>! 
-                  Ese era el causante del Error de Hidratación.
-                */}
 			</head>
 
-			{/* Pasamos las variables de Geist directamente a las clases del body */}
 			<body className={`${GeistSans.variable} ${GeistMono.variable} font-sans`}>
 				{children}
 
-				{/* Widget de Voz de ElevenLabs */}
 				<elevenlabs-convai agent-id='agent_3201kn26q9byfnr9xjdt9hjzsh72'></elevenlabs-convai>
 
 				{/* Usamos el componente nativo de Next.js para optimizar la carga del script */}

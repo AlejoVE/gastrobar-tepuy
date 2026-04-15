@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion"
 import { Menu, X, Globe } from "lucide-react"
@@ -9,6 +9,11 @@ const Header = ({ currentPage, setCurrentPage }) => {
   const { t, i18n } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isLangOpen, setIsLangOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const languages = [
     { code: "es", name: "Español" },
@@ -20,6 +25,8 @@ const Header = ({ currentPage, setCurrentPage }) => {
     i18n.changeLanguage(lng)
     setIsLangOpen(false)
   }
+
+  if (!mounted) return null;
 
   return (
     <motion.header
@@ -46,11 +53,10 @@ const Header = ({ currentPage, setCurrentPage }) => {
           <nav className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => setCurrentPage("home")}
-              className={`font-sans font-medium transition-all duration-300 px-6 py-3 rounded-xl text-lg ${
-                currentPage === "home"
-                  ? "text-forest-green bg-warm-cream shadow-sm"
-                  : "text-charcoal hover:text-forest-green hover:bg-warm-cream"
-              }`}
+              className={`font-sans font-medium transition-all duration-300 px-6 py-3 rounded-xl text-lg ${currentPage === "home"
+                ? "text-forest-green bg-warm-cream shadow-sm"
+                : "text-charcoal hover:text-forest-green hover:bg-warm-cream"
+                }`}
             >
               {t("nav.home")}
             </button>
@@ -113,9 +119,8 @@ const Header = ({ currentPage, setCurrentPage }) => {
                   setCurrentPage("home")
                   setIsMenuOpen(false)
                 }}
-                className={`block w-full text-left font-sans font-medium px-6 py-4 rounded-xl transition-colors text-lg ${
-                  currentPage === "home" ? "text-forest-green bg-warm-cream" : "text-charcoal hover:bg-warm-cream"
-                }`}
+                className={`block w-full text-left font-sans font-medium px-6 py-4 rounded-xl transition-colors text-lg ${currentPage === "home" ? "text-forest-green bg-warm-cream" : "text-charcoal hover:bg-warm-cream"
+                  }`}
               >
                 {t("nav.home")}
               </button>
@@ -136,11 +141,10 @@ const Header = ({ currentPage, setCurrentPage }) => {
                   <button
                     key={lang.code}
                     onClick={() => changeLanguage(lang.code)}
-                    className={`px-5 py-3 text-sm rounded-xl font-sans font-medium transition-colors ${
-                      i18n.language === lang.code
-                        ? "bg-forest-green text-white"
-                        : "bg-warm-cream text-charcoal hover:bg-sage-green hover:text-white"
-                    }`}
+                    className={`px-5 py-3 text-sm rounded-xl font-sans font-medium transition-colors ${i18n.language === lang.code
+                      ? "bg-forest-green text-white"
+                      : "bg-warm-cream text-charcoal hover:bg-sage-green hover:text-white"
+                      }`}
                   >
                     {lang.code.toUpperCase()}
                   </button>
