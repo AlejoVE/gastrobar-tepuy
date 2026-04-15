@@ -105,6 +105,7 @@ const Menu = () => {
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
@@ -121,6 +122,7 @@ const Menu = () => {
               key={category.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
             >
               <h3 className="font-sans text-3xl md:text-4xl font-semibold text-forest-green mb-12 text-center">
@@ -133,6 +135,7 @@ const Menu = () => {
                     key={itemIndex}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
                     className="bg-warm-cream rounded-2xl p-8 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
                   >
@@ -154,6 +157,7 @@ const Menu = () => {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-20"
         >
@@ -166,6 +170,7 @@ const Menu = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="bg-warm-cream rounded-2xl p-8 shadow-sm"
             >
@@ -183,6 +188,7 @@ const Menu = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
               className="bg-warm-cream rounded-2xl p-8 shadow-sm"
             >
@@ -200,6 +206,7 @@ const Menu = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
               className="bg-warm-cream rounded-2xl p-8 shadow-sm"
             >
