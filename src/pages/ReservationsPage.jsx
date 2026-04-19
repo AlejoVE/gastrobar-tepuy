@@ -1,7 +1,5 @@
 "use client"
 
-
-export const dynamic = 'force-dynamic';
 import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { motion, AnimatePresence } from "framer-motion"
@@ -312,6 +310,12 @@ const ReservationsPage = ({ setCurrentPage }) => {
       </div>
     </div>
   )
+}
+
+export async function getServerSideProps() {
+  return {
+    props: {},
+  }
 }
 
 export default ReservationsPage

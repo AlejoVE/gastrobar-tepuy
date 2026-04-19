@@ -37,7 +37,7 @@ const Calendar = ({ selectedDate, onDateSelect }) => {
           <ChevronLeft size={20} className="text-forest-green" />
         </button>
         <h3 className="font-sans text-xl font-semibold text-forest-green capitalize">
-          {monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
+          {Array.isArray(monthNames) && monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
         </h3>
         <button onClick={() => navigateMonth(1)} className="p-2 hover:bg-warm-cream rounded-lg">
           <ChevronRight size={20} className="text-forest-green" />
@@ -45,7 +45,7 @@ const Calendar = ({ selectedDate, onDateSelect }) => {
       </div>
 
       <div className="grid grid-cols-7 gap-1 mb-2">
-        {dayNames.map((day, index) => (
+        {Array.isArray(dayNames) && dayNames.map((day, index) => (
           <div key={index} className="h-10 flex items-center justify-center">
             <span className="text-sm font-sans font-medium text-sage-green">{day}</span>
           </div>
