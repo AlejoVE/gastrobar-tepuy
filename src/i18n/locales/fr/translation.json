@@ -155,55 +155,67 @@
     "rights": "Tous droits réservés."
   },
   "reservations": {
-    "title": "Réserver une Table",
-    "subtitle": "Réservez votre table et vivez une expérience gastronomique inoubliable",
-    "back": "Retour à l'accueil",
-    "previous": "Précédent",
-    "next": "Suivant",
-    "confirm": "Confirmer la Réservation",
-    "step1": {
-      "title": "Sélectionner la Date"
+    "steps": {
+      "date": "Choisir la date",
+      "table": "Votre table chez Tepuy",
+      "details": "Vos coordonnées",
+      "confirm": "Résumé de votre réservation"
     },
-    "step2": {
-      "title": "Détails de la Réservation",
-      "name": "Nom Complet",
-      "email": "Adresse Email",
-      "phone": "Numéro de Téléphone",
-      "guests": "Nombre de Convives",
-      "people": "personnes",
-      "time": "Heure Préférée",
-      "requests": "Demandes Spéciales",
-      "requestsPlaceholder": "Allergies, célébrations spéciales, etc."
+    "form": {
+      "guests": "Nombre de convives",
+      "zone": "Où préférez-vous vous asseoir ?",
+      "lounge": "Salle Intérieure",
+      "terrace": "Terrasse",
+      "hours": "Heures disponibles",
+      "name": "Nom complet",
+      "email": "E-mail",
+      "phone": "Téléphone",
+      "requests": "Demandes spéciales (Facultatif)",
+      "placeholder_requests": "Allergies, célébrations...",
+      "summary_date": "Date",
+      "summary_table": "Table",
+      "summary_name": "Au nom de"
     },
-    "step3": {
-      "title": "Informations de Paiement",
-      "disclaimer": "SIMULATION :",
-      "disclaimerText": "Ceci est un formulaire de démonstration. Ne saisissez pas de vraies informations de carte de crédit.",
-      "cardNumber": "Numéro de Carte",
-      "expiry": "Date d'Expiration",
-      "cvv": "CVV",
-      "cardName": "Nom sur la Carte",
-      "cardNamePlaceholder": "Tel qu'il apparaît sur la carte",
-      "summary": "Résumé de la Réservation",
-      "date": "Date",
-      "time": "Heure",
-      "guests": "Convives",
-      "deposit": "Acompte"
+    "buttons": {
+      "next": "Suivant",
+      "back": "Retour",
+      "review": "Vérifier",
+      "confirm": "Confirmer la réservation",
+      "success_back": "Retour à l'accueil"
     },
-    "step4": {
-      "title": "Réservation Confirmée !",
-      "message": "Votre réservation a été confirmée avec succès. Vous recevrez un email de confirmation sous peu.",
-      "details": "Détails de la Réservation",
-      "confirmation": "Confirmation",
-      "home": "Retour à l'Accueil"
+    "messages": {
+      "loading": "Recherche des meilleures tables...",
+      "success_title": "Réservation confirmée !",
+      "success_desc": "Nous vous avons envoyé un e-mail avec les détails.",
+      "error_full": "Désolé, la table vient d'être réservée. Veuillez revenir en arrière et choisir une autre heure."
     }
   },
   "calendar": {
-    "previousMonth": "Mois précédent",
-    "nextMonth": "Mois suivant",
-    "selected": "Date sélectionnée",
+    "months": [
+      "Janvier",
+      "Février",
+      "Mars",
+      "Avril",
+      "Mai",
+      "Juin",
+      "Juillet",
+      "Août",
+      "Septembre",
+      "Octobre",
+      "Novembre",
+      "Décembre"
+    ],
+    "days": [
+      "Dim",
+      "Lun",
+      "Mar",
+      "Mer",
+      "Jeu",
+      "Ven",
+      "Sam"
+    ],
+    "selected": "Sélectionné",
     "today": "Aujourd'hui",
-    "unavailable": "Non disponible",
-    "closedMondays": "Fermé le lundi"
+    "unavailable": "Indisponible"
   }
 }

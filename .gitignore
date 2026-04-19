@@ -29,3 +29,8 @@ build/
 
 # Next.js
 .next/
+
+# DOcumentation
+
+LLM documentation.md
+documentation.md

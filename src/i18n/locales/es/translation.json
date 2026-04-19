@@ -155,6 +155,34 @@
     "rights": "Todos los derechos reservados."
   },
   "reservations": {
+    "steps": {
+      "date": "Selecciona la Fecha",
+      "table": "Tu Mesa en Tepuy",
+      "details": "Tus Datos",
+      "confirm": "Resumen de tu Reserva"
+    },
+    "form": {
+      "guests": "Número de Comensales",
+      "zone": "¿Dónde prefieres sentarte?",
+      "lounge": "Salón Interior",
+      "terrace": "Terraza",
+      "hours": "Horas Disponibles",
+      "name": "Nombre Completo",
+      "email": "Email",
+      "phone": "Teléfono",
+      "requests": "Peticiones Especiales (Opcional)",
+      "placeholder_requests": "Alergias, celebraciones...",
+      "summary_date": "Fecha",
+      "summary_table": "Mesa",
+      "summary_name": "A nombre de"
+    },
+    "buttons": {
+      "next": "Siguiente",
+      "back": "Anterior",
+      "review": "Revisar",
+      "confirm": "Confirmar Reserva",
+      "success_back": "Volver al Inicio"
+    },
     "title": "Reservar Mesa",
     "subtitle": "Reserve su mesa y viva una experiencia gastronómica inolvidable",
     "back": "Volver al inicio",
@@ -164,46 +192,39 @@
     "step1": {
       "title": "Seleccione la Fecha"
     },
-    "step2": {
-      "title": "Detalles de la Reserva",
-      "name": "Nombre Completo",
-      "email": "Correo Electrónico",
-      "phone": "Teléfono",
-      "guests": "Número de Comensales",
-      "people": "personas",
-      "time": "Hora Preferida",
-      "requests": "Solicitudes Especiales",
-      "requestsPlaceholder": "Alergias, celebraciones especiales, etc."
-    },
-    "step3": {
-      "title": "Información de Pago",
-      "disclaimer": "SIMULACIÓN:",
-      "disclaimerText": "Este es un formulario de demostración. No ingrese información real de tarjetas de crédito.",
-      "cardNumber": "Número de Tarjeta",
-      "expiry": "Fecha de Vencimiento",
-      "cvv": "CVV",
-      "cardName": "Nombre en la Tarjeta",
-      "cardNamePlaceholder": "Como aparece en la tarjeta",
-      "summary": "Resumen de la Reserva",
-      "date": "Fecha",
-      "time": "Hora",
-      "guests": "Comensales",
-      "deposit": "Depósito"
-    },
-    "step4": {
-      "title": "¡Reserva Confirmada!",
-      "message": "Su reserva ha sido confirmada exitosamente. Recibirá un correo de confirmación en breve.",
-      "details": "Detalles de la Reserva",
-      "confirmation": "Confirmación",
-      "home": "Volver al Inicio"
+    "messages": {
+      "loading": "Buscando las mejores mesas...",
+      "success_title": "¡Reserva Confirmada!",
+      "success_desc": "Te hemos enviado un correo con los detalles.",
+      "error_full": "Lo sentimos, la mesa se acaba de agotar. Por favor, vuelve atrás y elige otra hora."
     }
   },
   "calendar": {
-    "previousMonth": "Mes anterior",
-    "nextMonth": "Mes siguiente",
-    "selected": "Fecha seleccionada",
+    "months": [
+      "Enero",
+      "Febrero",
+      "Marzo",
+      "Abril",
+      "Mayo",
+      "Junio",
+      "Julio",
+      "Agosto",
+      "Septiembre",
+      "Octubre",
+      "Noviembre",
+      "Diciembre"
+    ],
+    "days": [
+      "Dom",
+      "Lun",
+      "Mar",
+      "Mié",
+      "Jue",
+      "Vie",
+      "Sáb"
+    ],
+    "selected": "Seleccionada",
     "today": "Hoy",
-    "unavailable": "No disponible",
-    "closedMondays": "Cerrado los lunes"
+    "unavailable": "No disponible"
   }
 }
