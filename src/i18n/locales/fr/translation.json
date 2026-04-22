@@ -217,5 +217,30 @@
     "selected": "Sélectionné",
     "today": "Aujourd'hui",
     "unavailable": "Indisponible"
+  },
+  "manage_booking": {
+    "loading": "Recherche de votre réservation...",
+    "error_title": "Lien invalide",
+    "error_desc": "Le lien a expiré, la réservation est passée ou a été annulée.",
+    "back_home": "Retour à l'accueil",
+    "back_restaurant": "Retour au restaurant",
+    "title": "Gérer la réservation",
+    "ref": "RÉF",
+    "hello": "Bonjour",
+    "date": "Date",
+    "time": "Heure",
+    "table": "Table",
+    "pax": "pers.",
+    "limit_title": "Limite atteinte :",
+    "limit_desc": "Cette réservation a déjà été modifiée. Contactez-nous pour d'autres modifications.",
+    "modify_btn": "Modifier la réservation",
+    "cancel_btn": "Annuler la réservation",
+    "cancel_confirm_title": "Annuler la réservation ?",
+    "cancel_confirm_desc": "Cette action est irréversible et votre table sera libérée immédiatement.",
+    "btn_yes_cancel": "Oui, annuler la réservation",
+    "btn_no_keep": "Non, la conserver",
+    "cancel_success_title": "Réservation annulée",
+    "cancel_success_desc": "Votre réservation a été annulée avec succès. Nous espérons vous revoir une autre fois.",
+    "cancelling": "Annulation en cours..."
   }
 }

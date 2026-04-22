@@ -217,5 +217,30 @@
     "selected": "Selected",
     "today": "Today",
     "unavailable": "Unavailable"
+  },
+  "manage_booking": {
+    "loading": "Locating your reservation...",
+    "error_title": "Invalid link",
+    "error_desc": "The link has expired, the reservation has passed, or it was cancelled.",
+    "back_home": "Back to home",
+    "back_restaurant": "Back to restaurant",
+    "title": "Manage Reservation",
+    "ref": "REF",
+    "hello": "Hello",
+    "date": "Date",
+    "time": "Time",
+    "table": "Table",
+    "pax": "pax",
+    "limit_title": "Limit reached:",
+    "limit_desc": "This reservation has already been modified. Contact us for further changes.",
+    "modify_btn": "Modify Reservation",
+    "cancel_btn": "Cancel Reservation",
+    "cancel_confirm_title": "Cancel reservation?",
+    "cancel_confirm_desc": "This action cannot be undone and your table will be released immediately.",
+    "btn_yes_cancel": "Yes, cancel reservation",
+    "btn_no_keep": "No, keep it",
+    "cancel_success_title": "Reservation cancelled",
+    "cancel_success_desc": "Your reservation has been successfully cancelled. We hope to see you another time.",
+    "cancelling": "Cancelling..."
   }
 }

@@ -226,5 +226,30 @@
     "selected": "Seleccionada",
     "today": "Hoy",
     "unavailable": "No disponible"
+  },
+  "manage_booking": {
+    "loading": "Buscando tu reserva...",
+    "error_title": "Enlace no válido",
+    "error_desc": "El enlace caducó, la reserva ya pasó o fue cancelada.",
+    "back_home": "Volver al inicio",
+    "back_restaurant": "Volver al restaurante",
+    "title": "Gestionar Reserva",
+    "ref": "REF",
+    "hello": "Hola",
+    "date": "Fecha",
+    "time": "Hora",
+    "table": "Mesa",
+    "pax": "pax",
+    "limit_title": "Límite alcanzado:",
+    "limit_desc": "Esta reserva ya fue modificada. Contáctanos para más cambios.",
+    "modify_btn": "Modificar Reserva",
+    "cancel_btn": "Cancelar Reserva",
+    "cancel_confirm_title": "¿Cancelar reserva?",
+    "cancel_confirm_desc": "Esta acción no se puede deshacer y tu mesa será liberada inmediatamente.",
+    "btn_yes_cancel": "Sí, cancelar reserva",
+    "btn_no_keep": "No, mantenerla",
+    "cancel_success_title": "Reserva cancelada",
+    "cancel_success_desc": "Tu reserva ha sido cancelada con éxito. Esperamos verte en otra ocasión.",
+    "cancelling": "Cancelando..."
   }
 }
