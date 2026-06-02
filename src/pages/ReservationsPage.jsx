@@ -1,13 +1,12 @@
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
-import { useReservation } from "../hooks/useReservation" // Ajusta tu ruta
+import { useReservation } from "../hooks/useReservation"
 
-// Importamos las vistas (Créalas en una carpeta src/components/reservation-steps/)
 import { Step1Date, Step2Table, Step3Details, Step4Confirm, BookingSuccess } from "../components/reservation-steps/ReservationSteps"
 
 const ReservationsPage = ({ setCurrentPage }) => {
-  const reservationProps = useReservation() // Traemos toda la lógica del hook
+  const reservationProps = useReservation()
   const { step, bookingSuccess } = reservationProps
 
   const pageVariants = {
@@ -17,6 +16,7 @@ const ReservationsPage = ({ setCurrentPage }) => {
   }
 
   if (bookingSuccess) {
+    console.log("Booking successful! Displaying success message.");
     return <BookingSuccess setCurrentPage={setCurrentPage} t={reservationProps.t} />
   }
 

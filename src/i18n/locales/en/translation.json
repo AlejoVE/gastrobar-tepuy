@@ -242,5 +242,36 @@
     "cancel_success_title": "Reservation cancelled",
     "cancel_success_desc": "Your reservation has been successfully cancelled. We hope to see you another time.",
     "cancelling": "Cancelling..."
+  },
+  "modify_booking": {
+    "title": "Modify my reservation",
+    "subtitle": "You can change the details of your visit only once.",
+    "label_pax": "Number of guests",
+    "label_zone": "Preferred seating",
+    "label_time": "New time",
+    "btn_confirm": "Confirm changes",
+    "btn_cancel": "Cancel and return",
+    "error_too_late": "Sorry, changes cannot be made less than an hour in advance.",
+    "error_already_modified": "This reservation has already been modified.",
+    "success_title": "Reservation updated!",
+    "success_desc": "We have saved your changes. You will receive a confirmation email shortly.",
+    "modify_title": "Modify Booking Details",
+    "guests_label": "Guests",
+    "people": "people",
+    "date_label": "Date",
+    "zone_label": "Preferred Zone",
+    "time_label": "Available Time",
+    "loading_times": "Searching for available tables...",
+    "no_tables_available": "Sorry, there are no tables available for this date and party size.",
+    "save_changes_btn": "Save Changes",
+    "saving": "Saving...",
+    "modify_success": "We have sent you an email with the new details.",
+    "modify_success_title": "Booking successfully modified!",
+    "errors": {
+      "invalid_past_date": "You cannot select a past date.",
+      "missing_time": "Please select a valid arrival time.",
+      "availability_error": "Connection error while checking availability. Please try again.",
+      "modification_failed": "Could not modify the booking. The time limit has passed or the table was just taken."
+    }
   }
 }

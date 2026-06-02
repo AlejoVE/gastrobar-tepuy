@@ -1,6 +1,7 @@
 import { ArrowRight, ArrowLeft, CheckCircle2, Loader2, AlertCircle } from "lucide-react"
 import { motion } from "framer-motion"
 import Calendar from "../Calendar" // Ajusta la ruta
+import { isTimeSlotPast } from '../../utils/dateUtils'
 
 const inputStyle = "w-full p-4 rounded-xl border-2 border-sage-green/20 bg-pure-white text-charcoal placeholder:text-sage-green/60 focus:border-forest-green focus:ring-0 outline-none transition-all"
 
@@ -18,27 +19,7 @@ export const Step1Date = ({ t, formData, setFormData, nextStep, minDate }) => (
 
 export const Step2Table = ({ t, formData, setFormData, fetchAvailability, isLoading, availability, setSubmitError, prevStep, nextStep }) => {
 
-    // --- NUEVA LÓGICA DE VALIDACIÓN TEMPORAL (FRONTEND) ---
-    const checkIfPast = (slotTime) => {
-        if (!formData.date) return false;
 
-        // 1. Calcular el límite actual en España (+30 min de margen)
-        const limitTimeObj = new Date();
-        limitTimeObj.setMinutes(limitTimeObj.getMinutes() + 30);
-        const options = { timeZone: 'Europe/Madrid', hour12: false };
-
-        const spainToday = limitTimeObj.toLocaleDateString('en-CA', options); // YYYY-MM-DD
-        const limitTime = limitTimeObj.toLocaleTimeString('es-ES', options).substring(0, 5); // HH:MM
-
-        // 2. Formatear la fecha seleccionada por el usuario
-        const selectedDate = new Date(formData.date);
-        const selectedDateStr = selectedDate.toLocaleDateString('en-CA', options);
-
-        // 3. Evaluar
-        const isToday = selectedDateStr === spainToday;
-        return isToday && slotTime < limitTime; // Retorna true si es hoy y la hora ya pasó
-    };
-    // -----------------------------------------------------
 
     return (
         <>
@@ -84,8 +65,7 @@ export const Step2Table = ({ t, formData, setFormData, fetchAvailability, isLoad
                         <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
                             {availability[formData.zone].map((slot) => {
 
-                                // EJECUTAMOS LA VALIDACIÓN AQUÍ
-                                const isPast = checkIfPast(slot.time);
+                                const isPast = isTimeSlotPast(formData.date, slot.time, 30);
                                 const isUnavailable = slot.status === 'full' || isPast;
 
                                 return (
@@ -93,7 +73,7 @@ export const Step2Table = ({ t, formData, setFormData, fetchAvailability, isLoad
                                         key={slot.time}
                                         disabled={isUnavailable}
                                         onClick={() => { if (!isUnavailable) { setFormData({ ...formData, time: slot.time }); setSubmitError(null); } }}
-                                        className={`py-3 px-2 rounded-xl border-2 font-medium transition-all text-center text-sm 
+                                        className={`py-3 px-2 rounded-xl border-2 font-medium transition-all text-center text-sm
                       ${isUnavailable
                                                 ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60' // Estilo para horas pasadas/llenas
                                                 : formData.time === slot.time
@@ -180,12 +160,12 @@ export const Step4Confirm = ({ t, formData, prevStep, submitBooking, isSubmittin
     </>
 )
 
-export const BookingSuccess = ({ setCurrentPage, t }) => (
+export const BookingSuccess = ({ setCurrentPage, t, modifyMessage = false }) => (
     <div className="min-h-[80vh] flex flex-col items-center justify-center p-6 bg-pure-white">
         <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-center">
             <CheckCircle2 size={80} className="text-forest-green mx-auto mb-6" />
-            <h2 className="text-4xl font-sans font-bold text-forest-green mb-4">{t("reservations.messages.success_title")}</h2>
-            <p className="text-lg text-charcoal mb-8">{t("reservations.messages.success_desc")}</p>
+            <h2 className="text-4xl font-sans font-bold text-forest-green mb-4">{t(modifyMessage ? "modify_booking.modify_success_title" : "reservations.messages.success_title")}</h2>
+            <p className="text-lg text-charcoal mb-8">{t(modifyMessage ? "modify_booking.modify_success" : "reservations.messages.success_desc")}</p>
             <button onClick={() => setCurrentPage("home")} className="px-8 py-4 bg-forest-green text-white rounded-xl hover:bg-charcoal transition-all font-medium">
                 {t("reservations.buttons.success_back")}
             </button>

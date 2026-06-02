@@ -5,18 +5,30 @@ import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
-const Calendar = ({ selectedDate, onDateSelect, minDate }) => {
+const Calendar = ({ selectedDate, onDateSelect, minDate, compact = false }) => {
   const { t } = useTranslation()
   const [currentMonth, setCurrentMonth] = useState(new Date())
 
-  // "today" real para efectos visuales (saber qué día es hoy en la vida real)
+  // Tamaños dinámicos basados en la prop 'compact'
+  const containerClass = compact ? "max-w-xs w-full mx-auto p-4" : "max-w-md w-full mx-auto";
+  const titleClass = compact ? "text-lg font-bold text-forest-green capitalize" : "text-xl font-semibold text-forest-green capitalize";
+  const btnClass = compact ? "h-9 w-9 text-sm" : "h-12 w-12";
+  const dayHeaderClass = compact ? "h-8 text-xs" : "h-10 text-sm";
+  const gapClass = compact ? "gap-0.5" : "gap-1";
+
+  // "today" real para efectos visuales
   const today = new Date()
   today.setHours(0, 0, 0, 0)
 
-  // La fecha mínima real permitida para reservar (calculada desde el Orquestador)
-  // Si por alguna razón no llega minDate, usamos 'today' como respaldo de seguridad
+  // Fecha mínima real permitida
   const effectiveMinDate = minDate ? new Date(minDate) : new Date()
   effectiveMinDate.setHours(0, 0, 0, 0)
+
+  // ✨ LA SOLUCIÓN: Normalizamos la fecha seleccionada sin importar si viene como String o Date
+  const normalizedSelectedDate = selectedDate ? new Date(selectedDate) : null;
+  if (normalizedSelectedDate) {
+    normalizedSelectedDate.setHours(0, 0, 0, 0);
+  }
 
   const monthNames = t("calendar.months", { returnObjects: true })
   const dayNames = t("calendar.days", { returnObjects: true })
@@ -34,7 +46,6 @@ const Calendar = ({ selectedDate, onDateSelect, minDate }) => {
 
   const handleDateClick = (day) => {
     const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day)
-    // Validamos contra effectiveMinDate en lugar de today
     if (date >= effectiveMinDate) onDateSelect(date)
   }
 
@@ -69,7 +80,7 @@ const Calendar = ({ selectedDate, onDateSelect, minDate }) => {
           const date = new Date(currentMonth.getFullYear(), currentMonth.getMonth(), day);
           date.setHours(0, 0, 0, 0);
 
-          const isSelected = selectedDate && date.getTime() === selectedDate.getTime();
+          const isSelected = normalizedSelectedDate && date.getTime() === normalizedSelectedDate.getTime();
           // Disponibilidad basada en la fecha mínima calculada
           const isAvailable = date >= effectiveMinDate;
           // Identificador para pintar el borde del día real actual

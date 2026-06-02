@@ -251,5 +251,36 @@
     "cancel_success_title": "Reserva cancelada",
     "cancel_success_desc": "Tu reserva ha sido cancelada con éxito. Esperamos verte en otra ocasión.",
     "cancelling": "Cancelando..."
+  },
+  "modify_booking": {
+    "title": "Modificar mi reserva",
+    "subtitle": "Puedes cambiar los detalles de tu visita una única vez.",
+    "label_pax": "Número de personas",
+    "label_zone": "Zona preferida",
+    "label_time": "Nueva hora",
+    "btn_confirm": "Confirmar cambios",
+    "btn_cancel": "Cancelar y volver",
+    "error_too_late": "Lo sentimos, no se pueden realizar cambios con menos de una hora de antelación.",
+    "error_already_modified": "Esta reserva ya ha sido modificada anteriormente.",
+    "success_title": "¡Reserva actualizada!",
+    "success_desc": "Hemos guardado tus cambios. Recibirás un email de confirmación en unos instantes.",
+    "modify_title": "Modificar Detalles de Reserva",
+    "guests_label": "Comensales",
+    "people": "personas",
+    "date_label": "Fecha",
+    "zone_label": "Zona de preferencia",
+    "time_label": "Hora disponible",
+    "loading_times": "Buscando mesas disponibles...",
+    "no_tables_available": "Lo sentimos, no hay mesas disponibles para esta fecha y número de comensales.",
+    "save_changes_btn": "Guardar Cambios",
+    "saving": "Guardando...",
+    "modify_success": "Te hemos enviado un correo con los nuevos detalles.",
+    "modify_success_title": "¡Reserva modificada con éxito!",
+    "errors": {
+      "invalid_past_date": "No puedes seleccionar una fecha pasada.",
+      "missing_time": "Por favor, selecciona una hora de llegada válida.",
+      "availability_error": "Error de conexión al buscar disponibilidad. Intenta de nuevo.",
+      "modification_failed": "No se pudo modificar la reserva. Ya pasó el límite de tiempo o la mesa fue ocupada."
+    }
   }
 }

@@ -12,7 +12,7 @@ export const useManageBooking = (token) => {
 
 		const fetchBooking = async () => {
 			try {
-				const res = await fetch(`https://n8n.alemontilla.dev/webhook/get-booking-details?access_token=${token}`);
+				const res = await fetch(`api/n8n/get-booking-details?access_token=${token}`);
 				if (!res.ok) throw new Error('HTTP Error');
 
 				const json = await res.json();
@@ -38,7 +38,7 @@ export const useManageBooking = (token) => {
 		try {
 			const payload = { token: token };
 
-			const res = await fetch('https://n8n.alemontilla.dev/webhook/magic-link-cancel', {
+			const res = await fetch('api/n8n/magic-link-cancel', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify(payload),

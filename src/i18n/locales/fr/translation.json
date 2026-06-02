@@ -242,5 +242,36 @@
     "cancel_success_title": "Réservation annulée",
     "cancel_success_desc": "Votre réservation a été annulée avec succès. Nous espérons vous revoir une autre fois.",
     "cancelling": "Annulation en cours..."
+  },
+  "modify_booking": {
+    "title": "Modifier ma réservation",
+    "subtitle": "Vous ne pouvez modifier les détails de votre visite qu'une seule fois.",
+    "label_pax": "Nombre de personnes",
+    "label_zone": "Zone préférée",
+    "label_time": "Nouvelle heure",
+    "btn_confirm": "Confirmer les modifications",
+    "btn_cancel": "Annuler et revenir",
+    "error_too_late": "Désolé, les modifications ne peuvent pas être effectuées à moins d'une heure en avance.",
+    "error_already_modified": "Cette réservation a déjà été modifiée précédemment.",
+    "success_title": "Réservation mise à jour !",
+    "success_desc": "Nous avons enregistré vos modifications. Vous recevrez un e-mail de confirmation sous peu.",
+    "modify_title": "Modifier les Détails de la Réservation",
+    "guests_label": "Couverts",
+    "people": "personnes",
+    "date_label": "Date",
+    "zone_label": "Zone préférée",
+    "time_label": "Heure disponible",
+    "loading_times": "Recherche de tables disponibles...",
+    "no_tables_available": "Désolé, aucune table n'est disponible pour cette date et ce nombre de personnes.",
+    "save_changes_btn": "Enregistrer les modifications",
+    "saving": "Enregistrement...",
+    "modify_success": "Nous vous avons envoyé un e-mail avec les nouveaux détails.",
+    "modify_success_title": "Réservation modifiée avec succès !",
+    "errors": {
+      "invalid_past_date": "Vous ne pouvez pas sélectionner une date passée.",
+      "missing_time": "Veuillez sélectionner une heure d'arrivée valide.",
+      "availability_error": "Erreur de connexion lors de la recherche de disponibilité. Veuillez réessayer.",
+      "modification_failed": "Impossible de modifier la réservation. Le délai est dépassé ou la table n'est plus disponible."
+    }
   }
 }
