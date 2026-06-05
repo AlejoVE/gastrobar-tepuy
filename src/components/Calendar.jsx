@@ -9,22 +9,21 @@ const Calendar = ({ selectedDate, onDateSelect, minDate, compact = false }) => {
   const { t } = useTranslation()
   const [currentMonth, setCurrentMonth] = useState(new Date())
 
-  // Tamaños dinámicos basados en la prop 'compact'
+  // Dynamic sizes in the 'compact' prop
   const containerClass = compact ? "max-w-xs w-full mx-auto p-4" : "max-w-md w-full mx-auto";
   const titleClass = compact ? "text-lg font-bold text-forest-green capitalize" : "text-xl font-semibold text-forest-green capitalize";
   const btnClass = compact ? "h-9 w-9 text-sm" : "h-12 w-12";
   const dayHeaderClass = compact ? "h-8 text-xs" : "h-10 text-sm";
   const gapClass = compact ? "gap-0.5" : "gap-1";
 
-  // "today" real para efectos visuales
+
   const today = new Date()
   today.setHours(0, 0, 0, 0)
 
-  // Fecha mínima real permitida
+  // Minimum allowed date
   const effectiveMinDate = minDate ? new Date(minDate) : new Date()
   effectiveMinDate.setHours(0, 0, 0, 0)
 
-  // ✨ LA SOLUCIÓN: Normalizamos la fecha seleccionada sin importar si viene como String o Date
   const normalizedSelectedDate = selectedDate ? new Date(selectedDate) : null;
   if (normalizedSelectedDate) {
     normalizedSelectedDate.setHours(0, 0, 0, 0);
@@ -50,12 +49,14 @@ const Calendar = ({ selectedDate, onDateSelect, minDate, compact = false }) => {
   }
 
   return (
-    <div className="max-w-md mx-auto w-full">
+    // ✨ Usamos containerClass en lugar de clases fijas
+    <div className={containerClass}>
       <div className="flex items-center justify-between mb-6">
         <button onClick={() => navigateMonth(-1)} className="p-2 hover:bg-warm-cream rounded-lg transition-colors">
           <ChevronLeft size={20} className="text-forest-green" />
         </button>
-        <h3 className="font-sans text-xl font-semibold text-forest-green capitalize">
+        {/* ✨ Usamos titleClass */}
+        <h3 className={titleClass}>
           {Array.isArray(monthNames) && monthNames[currentMonth.getMonth()]} {currentMonth.getFullYear()}
         </h3>
         <button onClick={() => navigateMonth(1)} className="p-2 hover:bg-warm-cream rounded-lg transition-colors">
@@ -63,17 +64,21 @@ const Calendar = ({ selectedDate, onDateSelect, minDate, compact = false }) => {
         </button>
       </div>
 
-      <div className="grid grid-cols-7 gap-1 mb-2">
+      {/* ✨ Usamos gapClass en la grilla */}
+      <div className={`grid grid-cols-7 ${gapClass} mb-2`}>
         {Array.isArray(dayNames) && dayNames.map((day, index) => (
-          <div key={index} className="h-10 flex items-center justify-center">
+          // ✨ Usamos dayHeaderClass
+          <div key={index} className={`${dayHeaderClass} flex items-center justify-center`}>
             <span className="text-sm font-sans font-medium text-sage-green">{day}</span>
           </div>
         ))}
       </div>
 
-      <div className="grid grid-cols-7 gap-1">
+      {/* ✨ Usamos gapClass en la grilla principal */}
+      <div className={`grid grid-cols-7 ${gapClass}`}>
         {Array.from({ length: firstDayOfMonth }).map((_, i) => (
-          <div key={`empty-${i}`} className="h-12"></div>
+          // ✨ Los espacios en blanco también deben usar btnClass para mantener la proporción
+          <div key={`empty-${i}`} className={btnClass}></div>
         ))}
         {Array.from({ length: daysInMonth }).map((_, i) => {
           const day = i + 1;
@@ -81,9 +86,7 @@ const Calendar = ({ selectedDate, onDateSelect, minDate, compact = false }) => {
           date.setHours(0, 0, 0, 0);
 
           const isSelected = normalizedSelectedDate && date.getTime() === normalizedSelectedDate.getTime();
-          // Disponibilidad basada en la fecha mínima calculada
           const isAvailable = date >= effectiveMinDate;
-          // Identificador para pintar el borde del día real actual
           const isActualToday = date.getTime() === today.getTime();
 
           return (
@@ -91,13 +94,14 @@ const Calendar = ({ selectedDate, onDateSelect, minDate, compact = false }) => {
               key={day}
               onClick={() => handleDateClick(day)}
               disabled={!isAvailable}
-              className={`h-12 w-12 rounded-lg font-sans font-medium transition-all duration-200 
+              // ✨ Añadimos flex, items-center y justify-center para centrar el número, y usamos btnClass
+              className={`${btnClass} rounded-lg font-sans font-medium transition-all duration-200 flex items-center justify-center
                 ${isSelected
                   ? "bg-forest-green text-white shadow-lg border-transparent"
                   : isAvailable
                     ? "hover:bg-forest-green/20 text-charcoal bg-white"
                     : "text-gray-300 cursor-not-allowed bg-gray-50 opacity-60"
-                } 
+                }
                 ${isActualToday && !isSelected ? "border-2 border-natural-wood" : "border border-sage-green/20"}
               `}
             >

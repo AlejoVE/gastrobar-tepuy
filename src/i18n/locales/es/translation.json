@@ -29,108 +29,147 @@
   "menu": {
     "title": "Nuestra Carta",
     "subtitle": "Descubre una selección cuidadosamente curada de platos que celebran la riqueza gastronómica venezolana",
-    "appetizers": {
-      "title": "Para Abrir Boca",
-      "item1": {
-        "name": "Ensaladilla \"Guayanesa\" con tartar de gamba blanca",
-        "description": "Nuestra versión de la ensaladilla rusa con un toque tropical y tartar de gamba fresca",
-        "price": "€3.80 / €7.50"
+    "categories": [
+      {
+        "id": "appetizers",
+        "title": "Para Abrir Boca",
+        "items": [
+          {
+            "id": "ensaladilla",
+            "name": "Ensaladilla \"Guayanesa\" con tartar de gamba blanca",
+            "description": "Nuestra versión de la ensaladilla rusa con un toque tropical y tartar de gamba fresca",
+            "price": "€3.80 / €7.50"
+          },
+          {
+            "id": "papas_alinas",
+            "name": "Papas Aliñás \"Macuro\" con melva canutera",
+            "description": "Papas aliñadas al estilo venezolano acompañadas de melva canutera",
+            "price": "€3.50 / €6.50"
+          },
+          {
+            "id": "salmorejo",
+            "name": "Salmorejo de remolacha con queso de cabra",
+            "description": "Cremoso salmorejo de remolacha coronado con queso de cabra artesanal",
+            "price": "€4.00 / €7.50"
+          },
+          {
+            "id": "tiradito",
+            "name": "Tiradito de corvina al estilo \"Nikkei\"",
+            "description": "Finas láminas de corvina marinadas con técnica nikkei",
+            "price": "€12.00"
+          }
+        ]
       },
-      "item2": {
-        "name": "Papas Aliñás \"Macuro\" con melva canutera",
-        "description": "Papas aliñadas al estilo venezolano acompañadas de melva canutera",
-        "price": "€3.50 / €6.50"
+      {
+        "id": "mains",
+        "title": "Fritura Viajera & Platillos con Alma",
+        "items": [
+          {
+            "id": "croquetas",
+            "name": "Croquetas de puchero con alioli de kimchi",
+            "description": "Croquetas cremosas de puchero acompañadas de alioli de kimchi",
+            "price": "€3.50 / €6.50"
+          },
+          {
+            "id": "tequenos",
+            "name": "Tequeños venezolanos con melao de papelón",
+            "description": "Auténticos tequeños venezolanos servidos con melao de papelón",
+            "price": "€4.00 / €7.50"
+          },
+          {
+            "id": "bao",
+            "name": "Bao de Pringá Sevillana",
+            "description": "Pan bao relleno de pringá sevillana tradicional",
+            "price": "€5.50"
+          },
+          {
+            "id": "carrillada",
+            "name": "Carrillada ibérica al \"Asado Negro\"",
+            "description": "Tierna carrillada ibérica cocinada al estilo del asado negro venezolano",
+            "price": "€5.00 / €9.80"
+          }
+        ]
       },
-      "item3": {
-        "name": "Salmorejo de remolacha con queso de cabra",
-        "description": "Cremoso salmorejo de remolacha coronado con queso de cabra artesanal",
-        "price": "€4.00 / €7.50"
+      {
+        "id": "grilled",
+        "title": "Nuestra Brasa",
+        "items": [
+          {
+            "id": "presa",
+            "name": "Presa Ibérica de Bellota con chimichurri andaluz",
+            "description": "Jugosa presa ibérica de bellota acompañada de chimichurri con toque andaluz",
+            "price": "€19.50"
+          },
+          {
+            "id": "entrana",
+            "name": "Entraña de ternera con yuca frita y guasacaca",
+            "description": "Entraña de ternera a la brasa con yuca frita y salsa guasacaca",
+            "price": "€16.50"
+          },
+          {
+            "id": "lomo",
+            "name": "Lomo de corvina a la brasa \"a la espalda\"",
+            "description": "Lomo de corvina cocinado a la brasa con técnica tradicional",
+            "price": "€17.50"
+          }
+        ]
       },
-      "item4": {
-        "name": "Tiradito de corvina al estilo \"Nikkei\"",
-        "description": "Finas láminas de corvina marinadas con técnica nikkei",
-        "price": "€12.00"
+      {
+        "id": "desserts",
+        "title": "El Momento Dulce",
+        "items": [
+          {
+            "id": "coulant",
+            "name": "Coulant de Chocolate y Dulce de Leche",
+            "description": "Coulant de chocolate con corazón de dulce de leche",
+            "price": "€6.50"
+          },
+          {
+            "id": "torrija",
+            "name": "Torrija \"Tepuy\" de Pan Brioche Caramelizada",
+            "description": "Torrija de pan brioche caramelizada con toque especial de la casa",
+            "price": "€6.00"
+          },
+          {
+            "id": "nube",
+            "name": "Nube de Coco y Guayaba",
+            "description": "Postre aéreo de coco con esencia de guayaba",
+            "price": "€6.00"
+          }
+        ]
       }
-    },
-    "mains": {
-      "title": "Fritura Viajera & Platillos con Alma",
-      "item1": {
-        "name": "Croquetas de puchero con alioli de kimchi",
-        "description": "Croquetas cremosas de puchero acompañadas de alioli de kimchi",
-        "price": "€3.50 / €6.50"
-      },
-      "item2": {
-        "name": "Tequeños venezolanos con melao de papelón",
-        "description": "Auténticos tequeños venezolanos servidos con melao de papelón",
-        "price": "€4.00 / €7.50"
-      },
-      "item3": {
-        "name": "Bao de Pringá Sevillana",
-        "description": "Pan bao relleno de pringá sevillana tradicional",
-        "price": "€5.50"
-      },
-      "item4": {
-        "name": "Carrillada ibérica al \"Asado Negro\"",
-        "description": "Tierna carrillada ibérica cocinada al estilo del asado negro venezolano",
-        "price": "€5.00 / €9.80"
-      }
-    },
-    "grilled": {
-      "title": "Nuestra Brasa",
-      "item1": {
-        "name": "Presa Ibérica de Bellota con chimichurri andaluz",
-        "description": "Jugosa presa ibérica de bellota acompañada de chimichurri con toque andaluz",
-        "price": "€19.50"
-      },
-      "item2": {
-        "name": "Entraña de ternera con yuca frita y guasacaca",
-        "description": "Entraña de ternera a la brasa con yuca frita y salsa guasacaca",
-        "price": "€16.50"
-      },
-      "item3": {
-        "name": "Lomo de corvina a la brasa \"a la espalda\"",
-        "description": "Lomo de corvina cocinado a la brasa con técnica tradicional",
-        "price": "€17.50"
-      }
-    },
-    "desserts": {
-      "title": "El Momento Dulce",
-      "item1": {
-        "name": "Coulant de Chocolate y Dulce de Leche",
-        "description": "Coulant de chocolate con corazón de dulce de leche",
-        "price": "€6.50"
-      },
-      "item2": {
-        "name": "Torrija \"Tepuy\" de Pan Brioche Caramelizada",
-        "description": "Torrija de pan brioche caramelizada con toque especial de la casa",
-        "price": "€6.00"
-      },
-      "item3": {
-        "name": "Nube de Coco y Guayaba",
-        "description": "Postre aéreo de coco con esencia de guayaba",
-        "price": "€6.00"
-      }
-    },
+    ],
     "drinks": {
       "title": "Carta de Bebidas",
-      "beer": {
-        "title": "Cervezas",
-        "item1": "Copa de Cerveza de Barril (33 cl) - €2.80",
-        "item2": "Tanque / Jarra (50 cl) - €5.00",
-        "item3": "Tercio de Cerveza Nacional Premium - €3.80"
-      },
-      "wine": {
-        "title": "Vinos por Copa",
-        "item1": "Vino Blanco (Verdejo, Rueda) - €2.80",
-        "item2": "Vino Tinto (Rioja Crianza) - €3.00",
-        "item3": "Vino Premium del Mes - €3.50"
-      },
-      "cocktails": {
-        "title": "Nuestros Cócteles de Autor",
-        "item1": "Mojito de Parchita (Maracuyá) - €8.50",
-        "item2": "Atardecer en Tepuy - €9.00",
-        "item3": "Tepuy Spritz - €8.00"
-      }
+      "categories": [
+        {
+          "id": "beer",
+          "title": "Cervezas",
+          "items": [
+            "Copa de Cerveza de Barril (33 cl) - €2.80",
+            "Tanque / Jarra (50 cl) - €5.00",
+            "Tercio de Cerveza Nacional Premium - €3.80"
+          ]
+        },
+        {
+          "id": "wine",
+          "title": "Vinos por Copa",
+          "items": [
+            "Vino Blanco (Verdejo, Rueda) - €2.80",
+            "Vino Tinto (Rioja Crianza) - €3.00",
+            "Vino Premium del Mes - €3.50"
+          ]
+        },
+        {
+          "id": "cocktails",
+          "title": "Nuestros Cócteles de Autor",
+          "items": [
+            "Mojito de Parchita (Maracuyá) - €8.50",
+            "Atardecer en Tepuy - €9.00",
+            "Tepuy Spritz - €8.00"
+          ]
+        }
+      ]
     }
   },
   "gallery": {

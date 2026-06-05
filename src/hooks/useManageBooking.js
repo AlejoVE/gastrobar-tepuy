@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { fetchBooking, cancelBooking } from '../utils/api.js';
 
 export const useManageBooking = (token) => {
 	const [appState, setAppState] = useState('loading'); // 'loading', 'error', 'success'
@@ -10,47 +11,44 @@ export const useManageBooking = (token) => {
 	useEffect(() => {
 		if (!token) return setAppState('error');
 
-		const fetchBooking = async () => {
+		// Flag to avoid  fetching twice during development
+		let ignore = false;
+
+		const getBookingData = async () => {
 			try {
-				const res = await fetch(`api/n8n/get-booking-details?access_token=${token}`);
-				if (!res.ok) throw new Error('HTTP Error');
+				if (ignore) return;
+				const data = await fetchBooking(token);
 
-				const json = await res.json();
-				const payload = Array.isArray(json) ? json[0] : json;
+				if (!data.success) return setAppState('error');
 
-				if (payload?.success && payload?.data) {
-					setBooking(payload.data);
-					setAppState('success');
-				} else {
-					setAppState('error');
-				}
+				setBooking(data.data);
+				setAppState('success');
 			} catch (err) {
+				if (ignore) return;
 				console.error('Error fetching booking details:', err);
 				setAppState('error');
 			}
 		};
 
-		fetchBooking();
+		getBookingData();
+
+		return () => {
+			ignore = true;
+		};
 	}, [token]);
 
 	const executeCancel = async () => {
 		setIsProcessing(true);
 		try {
-			const payload = { token: token };
+			const res = await cancelBooking(token);
 
-			const res = await fetch('api/n8n/magic-link-cancel', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(payload),
-			});
-
-			const result = await res.json();
-
-			if (result.status === 'success') {
-				setIsCancelled(true);
-			} else {
-				alert(result.message || 'Error canceling booking.');
+			if (!res === 'success') {
+				alert('Error canceling booking.');
+				setIsProcessing(false);
+				return;
 			}
+
+			setIsCancelled(true);
 		} catch (err) {
 			console.error('Error canceling booking:', err);
 			alert('Error connecting to server.');

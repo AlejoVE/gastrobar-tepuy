@@ -28,109 +28,148 @@
   },
   "menu": {
     "title": "Our Menu",
-    "subtitle": "Discover a carefully curated selection of dishes that celebrate Venezuelan gastronomic richness",
-    "appetizers": {
-      "title": "To Start",
-      "item1": {
-        "name": "\"Guayanesa\" Potato Salad with white shrimp tartar",
-        "description": "Our version of Russian salad with a tropical touch and fresh shrimp tartar",
-        "price": "€3.80 / €7.50"
+    "subtitle": "Discover a carefully curated selection of dishes celebrating Venezuelan gastronomic richness",
+    "categories": [
+      {
+        "id": "appetizers",
+        "title": "Starters",
+        "items": [
+          {
+            "id": "ensaladilla",
+            "name": "\"Guayanesa\" Potato Salad with White Prawn Tartare",
+            "description": "Our version of Russian salad with a tropical touch and fresh prawn tartare",
+            "price": "€3.80 / €7.50"
+          },
+          {
+            "id": "papas_alinas",
+            "name": "\"Macuro\" Marinated Potatoes with Frigate Tuna",
+            "description": "Venezuelan-style marinated potatoes accompanied by frigate tuna",
+            "price": "€3.50 / €6.50"
+          },
+          {
+            "id": "salmorejo",
+            "name": "Beetroot Salmorejo with Goat Cheese",
+            "description": "Creamy beetroot salmorejo topped with artisanal goat cheese",
+            "price": "€4.00 / €7.50"
+          },
+          {
+            "id": "tiradito",
+            "name": "\"Nikkei\" Style Sea Bass Tiradito",
+            "description": "Thin slices of sea bass marinated with Nikkei technique",
+            "price": "€12.00"
+          }
+        ]
       },
-      "item2": {
-        "name": "\"Macuro\" Seasoned Potatoes with canned tuna",
-        "description": "Venezuelan-style seasoned potatoes accompanied by canned tuna",
-        "price": "€3.50 / €6.50"
+      {
+        "id": "mains",
+        "title": "Traveling Fried Dishes & Soulful Plates",
+        "items": [
+          {
+            "id": "croquetas",
+            "name": "Stew Croquettes with Kimchi Aioli",
+            "description": "Creamy stew croquettes accompanied by kimchi aioli",
+            "price": "€3.50 / €6.50"
+          },
+          {
+            "id": "tequenos",
+            "name": "Venezuelan Tequeños with Papelón Syrup",
+            "description": "Authentic Venezuelan tequeños served with sugar cane syrup",
+            "price": "€4.00 / €7.50"
+          },
+          {
+            "id": "bao",
+            "name": "Sevillian Pringá Bao",
+            "description": "Bao bun filled with traditional Sevillian pringá (stew meat)",
+            "price": "€5.50"
+          },
+          {
+            "id": "carrillada",
+            "name": "Iberian Pork Cheek \"Asado Negro\"",
+            "description": "Tender Iberian pork cheek cooked in the style of Venezuelan black roast",
+            "price": "€5.00 / €9.80"
+          }
+        ]
       },
-      "item3": {
-        "name": "Beetroot Salmorejo with goat cheese",
-        "description": "Creamy beetroot salmorejo topped with artisanal goat cheese",
-        "price": "€4.00 / €7.50"
+      {
+        "id": "grilled",
+        "title": "From Our Grill",
+        "items": [
+          {
+            "id": "presa",
+            "name": "Acorn-fed Iberian Presa with Andalusian Chimichurri",
+            "description": "Juicy acorn-fed Iberian pork cut accompanied by chimichurri with an Andalusian touch",
+            "price": "€19.50"
+          },
+          {
+            "id": "entrana",
+            "name": "Beef Skirt Steak with Fried Yuca and Guasacaca",
+            "description": "Grilled beef skirt steak with fried yuca and guasacaca sauce",
+            "price": "€16.50"
+          },
+          {
+            "id": "lomo",
+            "name": "Grilled Sea Bass Loin \"a la espalda\"",
+            "description": "Sea bass loin cooked on the grill using traditional techniques",
+            "price": "€17.50"
+          }
+        ]
       },
-      "item4": {
-        "name": "Sea bass Tiradito \"Nikkei\" style",
-        "description": "Thin slices of sea bass marinated with nikkei technique",
-        "price": "€12.00"
+      {
+        "id": "desserts",
+        "title": "Sweet Moments",
+        "items": [
+          {
+            "id": "coulant",
+            "name": "Chocolate and Dulce de Leche Coulant",
+            "description": "Chocolate coulant with a dulce de leche heart",
+            "price": "€6.50"
+          },
+          {
+            "id": "torrija",
+            "name": "Caramelized Brioche Bread \"Tepuy\" Torrija",
+            "description": "Caramelized brioche French toast with a special house touch",
+            "price": "€6.00"
+          },
+          {
+            "id": "nube",
+            "name": "Coconut and Guava Cloud",
+            "description": "Airy coconut dessert with guava essence",
+            "price": "€6.00"
+          }
+        ]
       }
-    },
-    "mains": {
-      "title": "Traveling Fritters & Soulful Dishes",
-      "item1": {
-        "name": "Stew croquettes with kimchi aioli",
-        "description": "Creamy stew croquettes accompanied by kimchi aioli",
-        "price": "€3.50 / €6.50"
-      },
-      "item2": {
-        "name": "Venezuelan tequeños with papelón syrup",
-        "description": "Authentic Venezuelan tequeños served with papelón syrup",
-        "price": "€4.00 / €7.50"
-      },
-      "item3": {
-        "name": "Sevillian Pringá Bao",
-        "description": "Bao bread filled with traditional Sevillian pringá",
-        "price": "€5.50"
-      },
-      "item4": {
-        "name": "Iberian cheek \"Asado Negro\" style",
-        "description": "Tender Iberian cheek cooked in Venezuelan asado negro style",
-        "price": "€5.00 / €9.80"
-      }
-    },
-    "grilled": {
-      "title": "Our Grill",
-      "item1": {
-        "name": "Acorn-fed Iberian Presa with Andalusian chimichurri",
-        "description": "Juicy acorn-fed Iberian presa accompanied by chimichurri with Andalusian touch",
-        "price": "€19.50"
-      },
-      "item2": {
-        "name": "Beef skirt steak with fried yuca and guasacaca",
-        "description": "Grilled beef skirt steak with fried yuca and guasacaca sauce",
-        "price": "€16.50"
-      },
-      "item3": {
-        "name": "Grilled sea bass loin \"a la espalda\"",
-        "description": "Sea bass loin cooked on the grill with traditional technique",
-        "price": "€17.50"
-      }
-    },
-    "desserts": {
-      "title": "Sweet Moments",
-      "item1": {
-        "name": "Chocolate and Dulce de Leche Coulant",
-        "description": "Chocolate coulant with dulce de leche heart",
-        "price": "€6.50"
-      },
-      "item2": {
-        "name": "\"Tepuy\" Caramelized Brioche French Toast",
-        "description": "Caramelized brioche French toast with special house touch",
-        "price": "€6.00"
-      },
-      "item3": {
-        "name": "Coconut and Guava Cloud",
-        "description": "Airy coconut dessert with guava essence",
-        "price": "€6.00"
-      }
-    },
+    ],
     "drinks": {
       "title": "Drinks Menu",
-      "beer": {
-        "title": "Beers",
-        "item1": "Draft Beer Glass (33 cl) - €2.80",
-        "item2": "Tank / Pitcher (50 cl) - €5.00",
-        "item3": "Premium National Beer - €3.80"
-      },
-      "wine": {
-        "title": "Wines by Glass",
-        "item1": "White Wine (Verdejo, Rueda) - €2.80",
-        "item2": "Red Wine (Rioja Crianza) - €3.00",
-        "item3": "Premium Wine of the Month - €3.50"
-      },
-      "cocktails": {
-        "title": "Our Signature Cocktails",
-        "item1": "Passion Fruit Mojito - €8.50",
-        "item2": "Tepuy Sunset - €9.00",
-        "item3": "Tepuy Spritz - €8.00"
-      }
+      "categories": [
+        {
+          "id": "beer",
+          "title": "Beers",
+          "items": [
+            "Draft Beer Glass (33 cl) - €2.80",
+            "Tankard / Pitcher (50 cl) - €5.00",
+            "Premium National Beer Bottle - €3.80"
+          ]
+        },
+        {
+          "id": "wine",
+          "title": "Wines by the Glass",
+          "items": [
+            "White Wine (Verdejo, Rueda) - €2.80",
+            "Red Wine (Rioja Crianza) - €3.00",
+            "Premium Wine of the Month - €3.50"
+          ]
+        },
+        {
+          "id": "cocktails",
+          "title": "Our Signature Cocktails",
+          "items": [
+            "Passion Fruit Mojito - €8.50",
+            "Sunset in Tepuy - €9.00",
+            "Tepuy Spritz - €8.00"
+          ]
+        }
+      ]
     }
   },
   "gallery": {

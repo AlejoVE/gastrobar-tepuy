@@ -2,12 +2,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { ArrowLeft } from 'lucide-react'
-
 import { useManageBooking } from '../hooks/useManageBooking.js'
 import { LoadingState, ErrorState, CancelledState } from '../components/manage-booking/BookingStates.jsx'
 import { BookingHeader, BookingDetails } from '../components/manage-booking/BookingInfo'
 import { BookingActions } from '../components/manage-booking/BookingActions'
-import { ModifyBookingForm } from '../components/manage-booking/ModifyBookingForm' // Añadimos la importación
+import { ModifyBookingForm } from '../components/manage-booking/ModifyBookingForm'
 import { BookingSuccess } from '../components/reservation-steps/ReservationSteps'
 
 export default function ManageBookingPage({ token, setCurrentPage }) {
@@ -17,7 +16,6 @@ export default function ManageBookingPage({ token, setCurrentPage }) {
         setShowConfirm, isProcessing, executeCancel
     } = useManageBooking(token)
 
-    // NUEVO: Estado para controlar si estamos en modo edición
     const [isModifying, setIsModifying] = useState(false)
     const [isModifySuccess, setIsModifySuccess] = useState(false)
 
@@ -44,7 +42,7 @@ export default function ManageBookingPage({ token, setCurrentPage }) {
                             {isCancelled ? (
                                 <CancelledState key="cancelled" t={t} setCurrentPage={setCurrentPage} />
                             ) : isModifying ? (
-                                // NUEVO: Vista de Modificación
+                                // MOdify view
                                 <motion.div key="modify" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }}>
                                     <ModifyBookingForm
                                         booking={booking}
@@ -55,7 +53,7 @@ export default function ManageBookingPage({ token, setCurrentPage }) {
                                     />
                                 </motion.div>
                             ) : (
-                                // Vista Normal de Detalles
+                                // Normal details view
                                 <motion.div key="manage" initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 20 }}>
                                     <BookingDetails booking={booking} t={t} />
                                     <BookingActions
@@ -65,7 +63,6 @@ export default function ManageBookingPage({ token, setCurrentPage }) {
                                         setShowConfirm={setShowConfirm}
                                         isProcessing={isProcessing}
                                         executeCancel={executeCancel}
-                                        // Pasamos la función para activar el modo edición
                                         onModifyClick={() => setIsModifying(true)}
                                     />
                                 </motion.div>

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { getNormalizedAvailability, modifyBooking } from '../utils/api';
 
 export const useModifyBooking = (booking, token, onSuccess) => {
 	const initialZone = booking.current_zone || 'Lounge';
@@ -18,50 +19,46 @@ export const useModifyBooking = (booking, token, onSuccess) => {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		const fetchAvailability = async () => {
-			const today = new Date().toISOString().split('T')[0];
-			if (formData.date < today) {
-				setError('invalid_past_date');
-				setFullAvailability(null);
-				return;
-			}
+		if (!formData.pax || !formData.date) return;
 
+		const getAvailableTables = async () => {
 			setIsLoadingTimes(true);
 			setError(null);
 
-			try {
-				const res = await fetch(`api/n8n/disponibilidad?date=${formData.date}&guests=${formData.pax}`);
-				if (!res.ok) throw new Error('HTTP Error');
+			const { success, data, errorType } = await getNormalizedAvailability(formData.date, formData.pax);
 
-				let data = await res.json();
-				if (Array.isArray(data) && data.length > 0) data = data[0];
-
-				if (Object.keys(data).length === 0 || data.error) {
+			if (success) {
+				setFullAvailability(data);
+			} else {
+				if (errorType === 'invalid_past_date') {
+					setError('invalid_past_date');
 					setFullAvailability(null);
+				} else if (errorType === 'full') {
+					setFullAvailability({ error: t('reservations.messages.error_full') });
 				} else {
-					setFullAvailability(data); // { Lounge: [{time: "14:00", status: "full"}], Terrace: [...] }
+					setError('availability_error');
+					setFullAvailability(null);
 				}
-			} catch (err) {
-				setError('availability_error');
-				setFullAvailability(null);
-			} finally {
-				setIsLoadingTimes(false);
 			}
+
+			setIsLoadingTimes(false);
 		};
 
-		fetchAvailability();
+		getAvailableTables();
 	}, [formData.pax, formData.date]);
 
-	// OBTENEMOS LAS HORAS COMO OBJETOS PARA LA ZONA SELECCIONADA
-	const availableTimes = fullAvailability ? fullAvailability[formData.zone] || [] : [];
+	// We filter the times based on the selected area
+	const availableTimes = fullAvailability?.availability
+		? fullAvailability.availability.filter((slot) => slot.zone_name === formData.zone)
+		: [];
 
 	const handleChange = (field, value) => {
 		setFormData((prev) => {
 			const newData = { ...prev, [field]: value };
 			if (field === 'pax' || field === 'date') newData.time = '';
-			if (field === 'zone' && fullAvailability) {
-				const newZoneTimes = fullAvailability[value] || [];
-				// Buscamos si la hora actual existe en la nueva zona
+
+			if (field === 'zone' && fullAvailability?.availability) {
+				const newZoneTimes = fullAvailability.availability.filter((slot) => slot.zone_name === value);
 				const timeExists = newZoneTimes.some((slot) => slot.time === prev.time && slot.status !== 'full');
 				if (!timeExists) newData.time = '';
 			}
@@ -69,7 +66,6 @@ export const useModifyBooking = (booking, token, onSuccess) => {
 		});
 	};
 
-	// 5. Función de guardado atómicore
 	const saveChanges = async () => {
 		if (!formData.time) {
 			setError('missing_time'); // Clave i18n
@@ -80,23 +76,9 @@ export const useModifyBooking = (booking, token, onSuccess) => {
 		setError(null);
 
 		try {
-			const res = await fetch('api/n8n/magic-link-modify', {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({
-					token: token,
-					new_guests: parseInt(formData.pax),
-					new_date: formData.date,
-					new_time: formData.time,
-					new_zone: formData.zone,
-				}),
-			});
+			const success = await modifyBooking(formData, token);
 
-			const data = await res.json();
-
-			if (!res.ok || data.error) {
-				throw new Error(data.error || 'modification_failed');
-			}
+			if (!success) return setError('modification_failed');
 
 			if (onSuccess) onSuccess();
 		} catch (err) {

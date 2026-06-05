@@ -1,18 +1,23 @@
 // utils/dateUtils.js
 
+// This function is used by the calendar to determine which days to display as available or unavailable
 export const getMinDate = () => {
 	const limitTimeObj = new Date();
-	limitTimeObj.setMinutes(limitTimeObj.getMinutes() + 30); // 30 min de margen por defecto
+
+	// Take the current time and add 30 minutes. Security buffer t0o book a table
+	limitTimeObj.setMinutes(limitTimeObj.getMinutes() + 30);
 
 	const options = { timeZone: 'Europe/Madrid', hour12: false };
 	const spainDateStr = limitTimeObj.toLocaleDateString('en-CA', options); // YYYY-MM-DD
 	const limitTime = limitTimeObj.toLocaleTimeString('es-ES', options).substring(0, 5); // HH:MM
 
-	const ULTIMO_SLOT = '22:30';
+	const LAST_SLOT = '22:30';
 	const minDateObj = new Date(spainDateStr);
-	minDateObj.setHours(0, 0, 0, 0);
 
-	if (limitTime > ULTIMO_SLOT) {
+	minDateObj.setHours(0, 0, 0, 0); // Time  00:00
+
+	if (limitTime > LAST_SLOT) {
+		// If the limitTime is later than the last available slot, add one more day, so the current day will be displayed as unavailable
 		minDateObj.setDate(minDateObj.getDate() + 1);
 	}
 
@@ -20,13 +25,13 @@ export const getMinDate = () => {
 };
 
 /**
- * Evalúa si una hora ya pasó, aplicando un margen de seguridad.
- * A prueba de fallos de zona horaria y navegadores.
+ * Checks whether a specific time has already passed, applying a safety margin.
+ * Time zone and browser-agnostic.
  */
 export const isTimeSlotPast = (selectedDateInput, slotTimeStr, marginMinutes = 30) => {
 	if (!selectedDateInput || !slotTimeStr) return false;
 
-	// 1. Extraemos la fecha exacta que seleccionó el usuario (YYYY-MM-DD)
+	// 1. We retrieve the exact date selected by the user (YYYY-MM-DD)
 	let selectedDateStr = '';
 	if (selectedDateInput instanceof Date) {
 		const y = selectedDateInput.getFullYear();
@@ -37,11 +42,11 @@ export const isTimeSlotPast = (selectedDateInput, slotTimeStr, marginMinutes = 3
 		selectedDateStr = String(selectedDateInput).split('T')[0];
 	}
 
-	// 2. Calculamos qué hora es "ahora mismo" en España más el margen de seguridad
+	// 2. We calculate what time it is “right now” in Spain, plus a safety margin
 	const realNow = new Date();
 	realNow.setMinutes(realNow.getMinutes() + marginMinutes);
 
-	// Convertimos la hora de España a números exactos
+	// We convert Spanish time to exact numbers
 	const spainDateString = realNow.toLocaleString('en-US', { timeZone: 'Europe/Madrid' });
 	const spainDate = new Date(spainDateString);
 
@@ -50,24 +55,24 @@ export const isTimeSlotPast = (selectedDateInput, slotTimeStr, marginMinutes = 3
 	const spainD = String(spainDate.getDate()).padStart(2, '0');
 	const spainToday = `${spainY}-${spainM}-${spainD}`;
 
-	// 3. REGLA A: Si la fecha seleccionada es de ayer o antes, bloqueamos todo
+	// 3. RULE A: If the selected date is yesterday or earlier, we block everything
 	if (selectedDateStr < spainToday) {
 		return true;
 	}
 
-	// 4. REGLA B: Si la fecha seleccionada es exactamente HOY, comparamos minutos
+	// 4. RULE B: If the selected date is exactly TODAY, we compare minutes
 	if (selectedDateStr === spainToday) {
-		// Cuántos minutos han pasado desde las 00:00 hasta la hora límite en España
+		// How many minutes have passed from midnight until the deadline in Spain
 		const limitTotalMinutes = spainDate.getHours() * 60 + spainDate.getMinutes();
 
-		// Cuántos minutos tiene el slot (ej: "18:30" -> 18 * 60 + 30 = 1110)
+		// How many minutes does the slot have (e.g., "18:30" -> 18 * 60 + 30 = 1110)
 		const [slotHour, slotMinute] = slotTimeStr.split(':').map(Number);
 		const slotTotalMinutes = slotHour * 60 + slotMinute;
 
-		// Si el slot ocurre ANTES que la hora límite, está pasado (retorna true)
+		// If the slot occurs BEFORE the deadline, it has passed (returns true)
 		return slotTotalMinutes < limitTotalMinutes;
 	}
 
-	// 5. REGLA C: Si es un día del futuro (ej. mañana), ninguna hora ha pasado
+	// 5. RULE C: If it's a future day (e.g., tomorrow), no hours have passed
 	return false;
 };

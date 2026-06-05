@@ -6,98 +6,12 @@ import { motion } from "framer-motion"
 const Menu = () => {
   const { t } = useTranslation()
 
-  const menuCategories = [
-    {
-      id: "appetizers",
-      items: [
-        {
-          name: t("menu.appetizers.item1.name"),
-          description: t("menu.appetizers.item1.description"),
-          price: t("menu.appetizers.item1.price"),
-        },
-        {
-          name: t("menu.appetizers.item2.name"),
-          description: t("menu.appetizers.item2.description"),
-          price: t("menu.appetizers.item2.price"),
-        },
-        {
-          name: t("menu.appetizers.item3.name"),
-          description: t("menu.appetizers.item3.description"),
-          price: t("menu.appetizers.item3.price"),
-        },
-        {
-          name: t("menu.appetizers.item4.name"),
-          description: t("menu.appetizers.item4.description"),
-          price: t("menu.appetizers.item4.price"),
-        },
-      ],
-    },
-    {
-      id: "mains",
-      items: [
-        {
-          name: t("menu.mains.item1.name"),
-          description: t("menu.mains.item1.description"),
-          price: t("menu.mains.item1.price"),
-        },
-        {
-          name: t("menu.mains.item2.name"),
-          description: t("menu.mains.item2.description"),
-          price: t("menu.mains.item2.price"),
-        },
-        {
-          name: t("menu.mains.item3.name"),
-          description: t("menu.mains.item3.description"),
-          price: t("menu.mains.item3.price"),
-        },
-        {
-          name: t("menu.mains.item4.name"),
-          description: t("menu.mains.item4.description"),
-          price: t("menu.mains.item4.price"),
-        },
-      ],
-    },
-    {
-      id: "grilled",
-      items: [
-        {
-          name: t("menu.grilled.item1.name"),
-          description: t("menu.grilled.item1.description"),
-          price: t("menu.grilled.item1.price"),
-        },
-        {
-          name: t("menu.grilled.item2.name"),
-          description: t("menu.grilled.item2.description"),
-          price: t("menu.grilled.item2.price"),
-        },
-        {
-          name: t("menu.grilled.item3.name"),
-          description: t("menu.grilled.item3.description"),
-          price: t("menu.grilled.item3.price"),
-        },
-      ],
-    },
-    {
-      id: "desserts",
-      items: [
-        {
-          name: t("menu.desserts.item1.name"),
-          description: t("menu.desserts.item1.description"),
-          price: t("menu.desserts.item1.price"),
-        },
-        {
-          name: t("menu.desserts.item2.name"),
-          description: t("menu.desserts.item2.description"),
-          price: t("menu.desserts.item2.price"),
-        },
-        {
-          name: t("menu.desserts.item3.name"),
-          description: t("menu.desserts.item3.description"),
-          price: t("menu.desserts.item3.price"),
-        },
-      ],
-    },
-  ]
+  const menuCategories = t("menu.categories", { returnObjects: true })
+  const drinkCategories = t("menu.drinks.categories", { returnObjects: true })
+
+
+  // Safety check in case the JSON hasn't loaded properly yet
+  if (!Array.isArray(menuCategories)) return null;
 
   return (
     <section className="bg-pure-white section-spacing">
@@ -116,6 +30,7 @@ const Menu = () => {
           <p className="text-body-large leading-relaxed max-w-4xl mx-auto text-charcoal">{t("menu.subtitle")}</p>
         </motion.div>
 
+        {/* --- FOOD SECTION --- */}
         <div className="space-y-20">
           {menuCategories.map((category, categoryIndex) => (
             <motion.div
@@ -126,13 +41,13 @@ const Menu = () => {
               transition={{ duration: 0.6, delay: categoryIndex * 0.2 }}
             >
               <h3 className="font-sans text-3xl md:text-4xl font-semibold text-forest-green mb-12 text-center">
-                {t(`menu.${category.id}.title`)}
+                {category.title}
               </h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                 {category.items.map((item, itemIndex) => (
                   <motion.div
-                    key={itemIndex}
+                    key={item.id || itemIndex}
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -153,7 +68,7 @@ const Menu = () => {
           ))}
         </div>
 
-        {/* Drinks Section */}
+        {/* --- DRINKS SECTION --- */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -166,61 +81,28 @@ const Menu = () => {
           </h3>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            {/* Beer Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-warm-cream rounded-2xl p-8 shadow-sm"
-            >
-              <h4 className="font-sans text-2xl font-semibold text-forest-green mb-6 text-center">
-                {t("menu.drinks.beer.title")}
-              </h4>
-              <div className="space-y-3 text-body text-charcoal">
-                <p>{t("menu.drinks.beer.item1")}</p>
-                <p>{t("menu.drinks.beer.item2")}</p>
-                <p>{t("menu.drinks.beer.item3")}</p>
-              </div>
-            </motion.div>
-
-            {/* Wine Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="bg-warm-cream rounded-2xl p-8 shadow-sm"
-            >
-              <h4 className="font-sans text-2xl font-semibold text-forest-green mb-6 text-center">
-                {t("menu.drinks.wine.title")}
-              </h4>
-              <div className="space-y-3 text-body text-charcoal">
-                <p>{t("menu.drinks.wine.item1")}</p>
-                <p>{t("menu.drinks.wine.item2")}</p>
-                <p>{t("menu.drinks.wine.item3")}</p>
-              </div>
-            </motion.div>
-
-            {/* Cocktails Section */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="bg-warm-cream rounded-2xl p-8 shadow-sm"
-            >
-              <h4 className="font-sans text-2xl font-semibold text-forest-green mb-6 text-center">
-                {t("menu.drinks.cocktails.title")}
-              </h4>
-              <div className="space-y-3 text-body text-charcoal">
-                <p>{t("menu.drinks.cocktails.item1")}</p>
-                <p>{t("menu.drinks.cocktails.item2")}</p>
-                <p>{t("menu.drinks.cocktails.item3")}</p>
-              </div>
-            </motion.div>
+            {Array.isArray(drinkCategories) && drinkCategories.map((drinkCat, idx) => (
+              <motion.div
+                key={drinkCat.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-warm-cream rounded-2xl p-8 shadow-sm"
+              >
+                <h4 className="font-sans text-2xl font-semibold text-forest-green mb-6 text-center">
+                  {drinkCat.title}
+                </h4>
+                <div className="space-y-3 text-body text-charcoal">
+                  {drinkCat.items.map((drinkItem, i) => (
+                    <p key={i}>{drinkItem}</p>
+                  ))}
+                </div>
+              </motion.div>
+            ))}
           </div>
         </motion.div>
+
       </div>
     </section>
   )

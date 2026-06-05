@@ -1,7 +1,7 @@
 import { ArrowRight, ArrowLeft, CheckCircle2, Loader2, AlertCircle } from "lucide-react"
 import { motion } from "framer-motion"
-import Calendar from "../Calendar" // Ajusta la ruta
-import { isTimeSlotPast } from '../../utils/dateUtils'
+import Calendar from "../Calendar"
+import { TimeSlotSelector } from "../TimeSlotSelector"
 
 const inputStyle = "w-full p-4 rounded-xl border-2 border-sage-green/20 bg-pure-white text-charcoal placeholder:text-sage-green/60 focus:border-forest-green focus:ring-0 outline-none transition-all"
 
@@ -17,21 +17,26 @@ export const Step1Date = ({ t, formData, setFormData, nextStep, minDate }) => (
     </>
 )
 
-export const Step2Table = ({ t, formData, setFormData, fetchAvailability, isLoading, availability, setSubmitError, prevStep, nextStep }) => {
+export const Step2Table = ({ t, formData, setFormData, getAvailableTables, isLoading, availability, setSubmitError, prevStep, nextStep }) => {
 
-
+    const uniqueZones = availability?.availability
+        ? [...new Set(availability.availability.map(slot => slot.zone_name))]
+        : [];
 
     return (
         <>
             <h2 className="text-3xl font-sans font-bold text-forest-green mb-8 text-center">{t("reservations.steps.table")}</h2>
             <div className="space-y-8">
 
-                {/* Selector de Personas */}
+                {/* Pax selector */}
                 <div>
                     <label className="block text-sm font-medium text-charcoal mb-2">{t("reservations.form.guests")}</label>
                     <select
                         value={formData.guests}
-                        onChange={(e) => { setFormData({ ...formData, guests: e.target.value }); fetchAvailability(formData.date, e.target.value); }}
+                        onChange={(e) => {
+                            setFormData({ ...formData, guests: e.target.value, zone: '', time: '' });
+                            getAvailableTables(formData.date, e.target.value);
+                        }}
                         className={inputStyle}
                     >
                         <option value="">...</option>
@@ -44,13 +49,17 @@ export const Step2Table = ({ t, formData, setFormData, fetchAvailability, isLoad
                 {isLoading && <div className="flex justify-center py-8"><Loader2 className="animate-spin text-forest-green" size={32} /></div>}
                 {availability?.error && <p className="text-center text-red-500 font-medium">{availability.error}</p>}
 
-                {/* Selector de Zona */}
-                {availability && !availability.error && !isLoading && (
+                {/* Zone selector */}
+                {availability && !availability.error && !isLoading && uniqueZones.length > 0 && (
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}>
                         <label className="block text-sm font-medium text-charcoal mb-3">{t("reservations.form.zone")}</label>
                         <div className="grid grid-cols-2 gap-4">
-                            {['Lounge', 'Terrace'].map(zone => availability[zone] && (
-                                <button key={zone} onClick={() => setFormData({ ...formData, zone, time: '' })} className={`p-4 rounded-xl border-2 text-center transition-all font-bold ${formData.zone === zone ? 'border-forest-green bg-forest-green text-white shadow-md' : 'border-sage-green/20 text-charcoal hover:border-forest-green/50'}`}>
+                            {uniqueZones.map(zone => (
+                                <button
+                                    key={zone}
+                                    onClick={() => setFormData({ ...formData, zone, time: '' })}
+                                    className={`p-4 rounded-xl border-2 text-center transition-all font-bold ${formData.zone === zone ? 'border-forest-green bg-forest-green text-white shadow-md' : 'border-sage-green/20 text-charcoal hover:border-forest-green/50'}`}
+                                >
                                     <span className="block mb-1">{t(`reservations.form.${zone.toLowerCase()}`)}</span>
                                 </button>
                             ))}
@@ -58,34 +67,22 @@ export const Step2Table = ({ t, formData, setFormData, fetchAvailability, isLoad
                     </motion.div>
                 )}
 
-                {/* Selector de Horas */}
-                {formData.zone && availability[formData.zone] && (
+                {/* Hours selector */}
+                {formData.zone && availability?.availability && (
                     <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} className="pt-4 border-t border-sage-green/20">
                         <label className="block text-sm font-medium text-charcoal mb-3">{t("reservations.form.hours")}</label>
-                        <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
-                            {availability[formData.zone].map((slot) => {
-
-                                const isPast = isTimeSlotPast(formData.date, slot.time, 30);
-                                const isUnavailable = slot.status === 'full' || isPast;
-
-                                return (
-                                    <button
-                                        key={slot.time}
-                                        disabled={isUnavailable}
-                                        onClick={() => { if (!isUnavailable) { setFormData({ ...formData, time: slot.time }); setSubmitError(null); } }}
-                                        className={`py-3 px-2 rounded-xl border-2 font-medium transition-all text-center text-sm
-                      ${isUnavailable
-                                                ? 'bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed opacity-60' // Estilo para horas pasadas/llenas
-                                                : formData.time === slot.time
-                                                    ? 'ring-4 ring-forest-green/20 border-forest-green bg-forest-green text-white'
-                                                    : 'bg-sage-green/10 text-forest-green border-sage-green hover:bg-sage-green hover:text-white'
-                                            }`}
-                                    >
-                                        {slot.time}
-                                    </button>
-                                )
-                            })}
-                        </div>
+                        <TimeSlotSelector
+                            availableTimes={availability.availability.filter(slot => slot.zone_name === formData.zone)}
+                            selectedDate={formData.date}
+                            selectedTime={formData.time}
+                            isLoadingTimes={isLoading}
+                            marginMinutes={30}
+                            onTimeSelect={(time) => {
+                                setFormData({ ...formData, time: time });
+                                setSubmitError(null);
+                            }}
+                            t={t}
+                        />
                     </motion.div>
                 )}
             </div>
@@ -128,7 +125,7 @@ export const Step3Details = ({ t, formData, setFormData, prevStep, nextStep }) =
     </>
 )
 
-export const Step4Confirm = ({ t, formData, prevStep, submitBooking, isSubmitting, submitError }) => (
+export const Step4Confirm = ({ t, formData, prevStep, createBooking, isSubmitting, submitError }) => (
     <>
         <h2 className="text-3xl font-sans font-bold text-forest-green mb-8 text-center">{t("reservations.steps.confirm")}</h2>
         {submitError && (
@@ -153,7 +150,7 @@ export const Step4Confirm = ({ t, formData, prevStep, submitBooking, isSubmittin
         </div>
         <div className="flex justify-between">
             <button onClick={prevStep} className="flex items-center gap-2 px-6 py-4 text-charcoal hover:bg-warm-cream rounded-xl transition-colors" disabled={isSubmitting}><ArrowLeft size={20} /> {t("reservations.buttons.back")}</button>
-            <button onClick={submitBooking} disabled={isSubmitting} className="flex items-center justify-center gap-2 px-8 py-4 bg-forest-green text-white rounded-xl font-medium hover:bg-charcoal transition-all disabled:bg-gray-400 disabled:cursor-not-allowed">
+            <button onClick={createBooking} disabled={isSubmitting} className="flex items-center justify-center gap-2 px-8 py-4 bg-forest-green text-white rounded-xl font-medium hover:bg-charcoal transition-all disabled:bg-gray-400 disabled:cursor-not-allowed">
                 {isSubmitting ? <Loader2 className="animate-spin" size={20} /> : t("reservations.buttons.confirm")}
             </button>
         </div>

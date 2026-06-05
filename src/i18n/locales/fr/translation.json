@@ -28,109 +28,148 @@
   },
   "menu": {
     "title": "Notre Carte",
-    "subtitle": "Découvrez une sélection soigneusement élaborée de plats qui célèbrent la richesse gastronomique vénézuélienne",
-    "appetizers": {
-      "title": "Pour Commencer",
-      "item1": {
-        "name": "Salade de pommes de terre \"Guayanesa\" avec tartare de crevettes blanches",
-        "description": "Notre version de la salade russe avec une touche tropicale et tartare de crevettes fraîches",
-        "price": "€3.80 / €7.50"
+    "subtitle": "Découvrez une sélection soigneusement élaborée de plats célébrant la richesse gastronomique vénézuélienne",
+    "categories": [
+      {
+        "id": "appetizers",
+        "title": "Pour Commencer",
+        "items": [
+          {
+            "id": "ensaladilla",
+            "name": "Salade Russe \"Guayanesa\" au Tartare de Crevettes Blanches",
+            "description": "Notre version de la salade russe avec une touche tropicale et tartare de crevettes fraîches",
+            "price": "€3.80 / €7.50"
+          },
+          {
+            "id": "papas_alinas",
+            "name": "Pommes de Terre Marinées \"Macuro\" au Thon Frégate",
+            "description": "Pommes de terre marinées à la vénézuélienne accompagnées de thon frégate",
+            "price": "€3.50 / €6.50"
+          },
+          {
+            "id": "salmorejo",
+            "name": "Salmorejo de Betterave au Fromage de Chèvre",
+            "description": "Salmorejo crémeux de betterave surmonté de fromage de chèvre artisanal",
+            "price": "€4.00 / €7.50"
+          },
+          {
+            "id": "tiradito",
+            "name": "Tiradito de Maigre façon \"Nikkei\"",
+            "description": "Fines tranches de maigre marinées selon la technique nikkei",
+            "price": "€12.00"
+          }
+        ]
       },
-      "item2": {
-        "name": "Pommes de terre assaisonnées \"Macuro\" avec thon en conserve",
-        "description": "Pommes de terre assaisonnées à la vénézuélienne accompagnées de thon en conserve",
-        "price": "€3.50 / €6.50"
+      {
+        "id": "mains",
+        "title": "Fritures Voyageuses & Plats de l'Âme",
+        "items": [
+          {
+            "id": "croquetas",
+            "name": "Croquettes de Ragoût à l'Aïoli de Kimchi",
+            "description": "Croquettes crémeuses de ragoût accompagnées d'aïoli de kimchi",
+            "price": "€3.50 / €6.50"
+          },
+          {
+            "id": "tequenos",
+            "name": "Tequeños Vénézuéliens au Sirop de Papelón",
+            "description": "Authentiques tequeños vénézuéliens servis avec sirop de canne à sucre",
+            "price": "€4.00 / €7.50"
+          },
+          {
+            "id": "bao",
+            "name": "Bao de Pringá Sévillane",
+            "description": "Pain bao garni de pringá sévillane traditionnelle (ragoût de viande)",
+            "price": "€5.50"
+          },
+          {
+            "id": "carrillada",
+            "name": "Joue de Porc Ibérique \"Asado Negro\"",
+            "description": "Tendre joue de porc ibérique cuisinée à la façon du rôti noir vénézuélien",
+            "price": "€5.00 / €9.80"
+          }
+        ]
       },
-      "item3": {
-        "name": "Salmorejo de betterave avec fromage de chèvre",
-        "description": "Salmorejo crémeux de betterave couronné de fromage de chèvre artisanal",
-        "price": "€4.00 / €7.50"
+      {
+        "id": "grilled",
+        "title": "Nos Grillades",
+        "items": [
+          {
+            "id": "presa",
+            "name": "Presa Ibérique de Bellota au Chimichurri Andalou",
+            "description": "Juteuse presa ibérique de bellota accompagnée d'un chimichurri avec une touche andalouse",
+            "price": "€19.50"
+          },
+          {
+            "id": "entrana",
+            "name": "Hampe de Bœuf avec Yuca Frit et Guasacaca",
+            "description": "Hampe de bœuf grillée avec yuca frit et sauce guasacaca",
+            "price": "€16.50"
+          },
+          {
+            "id": "lomo",
+            "name": "Dos de Maigre Grillé \"a la espalda\"",
+            "description": "Dos de maigre cuit sur le gril selon la technique traditionnelle",
+            "price": "€17.50"
+          }
+        ]
       },
-      "item4": {
-        "name": "Tiradito de bar style \"Nikkei\"",
-        "description": "Fines tranches de bar marinées avec la technique nikkei",
-        "price": "€12.00"
+      {
+        "id": "desserts",
+        "title": "Le Moment Doux",
+        "items": [
+          {
+            "id": "coulant",
+            "name": "Coulant au Chocolat et Dulce de Leche",
+            "description": "Coulant au chocolat avec un cœur de dulce de leche",
+            "price": "€6.50"
+          },
+          {
+            "id": "torrija",
+            "name": "Pain Perdu \"Tepuy\" de Brioche Caramélisée",
+            "description": "Pain perdu de brioche caramélisée avec une touche spéciale de la maison",
+            "price": "€6.00"
+          },
+          {
+            "id": "nube",
+            "name": "Nuage de Noix de Coco et Goyave",
+            "description": "Dessert aérien à la noix de coco avec essence de goyave",
+            "price": "€6.00"
+          }
+        ]
       }
-    },
-    "mains": {
-      "title": "Friture Voyageuse & Plats avec Âme",
-      "item1": {
-        "name": "Croquettes de pot-au-feu avec aïoli de kimchi",
-        "description": "Croquettes crémeuses de pot-au-feu accompagnées d'aïoli de kimchi",
-        "price": "€3.50 / €6.50"
-      },
-      "item2": {
-        "name": "Tequeños vénézuéliens avec sirop de papelón",
-        "description": "Authentiques tequeños vénézuéliens servis avec sirop de papelón",
-        "price": "€4.00 / €7.50"
-      },
-      "item3": {
-        "name": "Bao de Pringá Sévillane",
-        "description": "Pain bao farci de pringá sévillane traditionnelle",
-        "price": "€5.50"
-      },
-      "item4": {
-        "name": "Joue ibérique style \"Asado Negro\"",
-        "description": "Joue ibérique tendre cuisinée dans le style de l'asado negro vénézuélien",
-        "price": "€5.00 / €9.80"
-      }
-    },
-    "grilled": {
-      "title": "Notre Grill",
-      "item1": {
-        "name": "Presa Ibérique de Bellota avec chimichurri andalou",
-        "description": "Presa ibérique de bellota juteuse accompagnée de chimichurri avec touche andalouse",
-        "price": "€19.50"
-      },
-      "item2": {
-        "name": "Bavette de bœuf avec yuca frite et guasacaca",
-        "description": "Bavette de bœuf grillée avec yuca frite et sauce guasacaca",
-        "price": "€16.50"
-      },
-      "item3": {
-        "name": "Filet de bar grillé \"a la espalda\"",
-        "description": "Filet de bar cuit au grill avec technique traditionnelle",
-        "price": "€17.50"
-      }
-    },
-    "desserts": {
-      "title": "Moments Sucrés",
-      "item1": {
-        "name": "Coulant au Chocolat et Dulce de Leche",
-        "description": "Coulant au chocolat avec cœur de dulce de leche",
-        "price": "€6.50"
-      },
-      "item2": {
-        "name": "Pain perdu \"Tepuy\" de Pain Brioche Caramélisé",
-        "description": "Pain perdu de brioche caramélisé avec touche spéciale de la maison",
-        "price": "€6.00"
-      },
-      "item3": {
-        "name": "Nuage de Coco et Goyave",
-        "description": "Dessert aérien de coco avec essence de goyave",
-        "price": "€6.00"
-      }
-    },
+    ],
     "drinks": {
       "title": "Carte des Boissons",
-      "beer": {
-        "title": "Bières",
-        "item1": "Verre de Bière Pression (33 cl) - €2.80",
-        "item2": "Chope / Pichet (50 cl) - €5.00",
-        "item3": "Bière Nationale Premium - €3.80"
-      },
-      "wine": {
-        "title": "Vins au Verre",
-        "item1": "Vin Blanc (Verdejo, Rueda) - €2.80",
-        "item2": "Vin Rouge (Rioja Crianza) - €3.00",
-        "item3": "Vin Premium du Mois - €3.50"
-      },
-      "cocktails": {
-        "title": "Nos Cocktails Signature",
-        "item1": "Mojito de Fruit de la Passion - €8.50",
-        "item2": "Coucher de Soleil Tepuy - €9.00",
-        "item3": "Tepuy Spritz - €8.00"
-      }
+      "categories": [
+        {
+          "id": "beer",
+          "title": "Bières",
+          "items": [
+            "Verre de Bière Pression (33 cl) - €2.80",
+            "Chope / Pichet (50 cl) - €5.00",
+            "Bouteille de Bière Nationale Premium - €3.80"
+          ]
+        },
+        {
+          "id": "wine",
+          "title": "Vins au Verre",
+          "items": [
+            "Vin Blanc (Verdejo, Rueda) - €2.80",
+            "Vin Rouge (Rioja Crianza) - €3.00",
+            "Vin Premium du Mois - €3.50"
+          ]
+        },
+        {
+          "id": "cocktails",
+          "title": "Nos Cocktails Signature",
+          "items": [
+            "Mojito Fruit de la Passion - €8.50",
+            "Coucher de Soleil à Tepuy - €9.00",
+            "Tepuy Spritz - €8.00"
+          ]
+        }
+      ]
     }
   },
   "gallery": {

@@ -16,7 +16,6 @@ const ReservationsPage = ({ setCurrentPage }) => {
   }
 
   if (bookingSuccess) {
-    console.log("Booking successful! Displaying success message.");
     return <BookingSuccess setCurrentPage={setCurrentPage} t={reservationProps.t} />
   }
 
