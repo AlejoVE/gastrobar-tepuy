@@ -7,6 +7,7 @@ import Footer from "./components/Footer"
 import HomePage from "./pages/HomePage"
 import ReservationsPage from "./pages/ReservationsPage"
 import ManageBookingPage from "./pages/ManageBookingPage"
+import Index from './pages/admin/index.jsx'
 
 import "./index.css"
 
@@ -30,6 +31,17 @@ function App() {
 
       <main className="pt-20">
         <AnimatePresence mode="wait">
+          {currentPage === "admin" && (
+            <motion.div
+              key="admin"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <Index setCurrentPage={setCurrentPage} />
+            </motion.div>
+          )}
           {currentPage === "home" && (
             <motion.div
               key="home"
