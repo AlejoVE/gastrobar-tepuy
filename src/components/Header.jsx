@@ -4,12 +4,16 @@ import { useState, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion"
 import { Menu, X, Globe } from "lucide-react"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-const Header = ({ currentPage, setCurrentPage }) => {
+const Header = () => {
   const { t, i18n } = useTranslation()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isLangOpen, setIsLangOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
+
+  const pathname = usePathname()
 
   useEffect(() => {
     setMounted(true)
@@ -37,34 +41,37 @@ const Header = ({ currentPage, setCurrentPage }) => {
     >
       <div className="container">
         <div className="flex justify-between items-center h-20">
+
           {/* Logo */}
-          <motion.div
-            className="flex items-center cursor-pointer"
-            onClick={() => setCurrentPage("home")}
-            whileHover={{ scale: 1.05 }}
-          >
-            <div className="flex flex-col">
-              <span className="text-2xl font-sans font-bold text-forest-green tracking-wide">GASTROBAR</span>
-              <span className="text-lg font-sans font-medium text-sage-green -mt-1 tracking-widest">TEPUY</span>
-            </div>
-          </motion.div>
+          <Link href="/">
+            <motion.div
+              className="flex items-center cursor-pointer"
+              whileHover={{ scale: 1.05 }}
+            >
+              <div className="flex flex-col">
+                <span className="text-2xl font-sans font-bold text-forest-green tracking-wide">GASTROBAR</span>
+                <span className="text-lg font-sans font-medium text-sage-green -mt-1 tracking-widest">TEPUY</span>
+              </div>
+            </motion.div>
+          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => setCurrentPage("home")}
-              className={`font-sans font-medium transition-all duration-300 px-6 py-3 rounded-xl text-lg ${currentPage === "home"
+            <Link
+              href="/"
+              className={`font-sans font-medium transition-all duration-300 px-6 py-3 rounded-xl text-lg ${pathname === "/"
                 ? "text-forest-green bg-warm-cream shadow-sm"
                 : "text-charcoal hover:text-forest-green hover:bg-warm-cream"
                 }`}
             >
               {t("nav.home")}
-            </button>
-            <button onClick={() => setCurrentPage("reservations")} className="btn-primary text-lg">
-              {t("nav.book")}
-            </button>
+            </Link>
 
-            {/* Language Switcher */}
+            <Link href="/reservations" className="btn-primary text-lg">
+              {t("nav.book")}
+            </Link>
+
+            {/* Language Switcher (Se queda igual porque no navega a otra URL) */}
             <div className="relative">
               <button
                 onClick={() => setIsLangOpen(!isLangOpen)}
@@ -114,28 +121,26 @@ const Header = ({ currentPage, setCurrentPage }) => {
             className="md:hidden border-t border-sage-green/20 bg-white/95 backdrop-blur-sm"
           >
             <div className="py-8 space-y-6">
-              <button
-                onClick={() => {
-                  setCurrentPage("home")
-                  setIsMenuOpen(false)
-                }}
-                className={`block w-full text-left font-sans font-medium px-6 py-4 rounded-xl transition-colors text-lg ${currentPage === "home" ? "text-forest-green bg-warm-cream" : "text-charcoal hover:bg-warm-cream"
+              <Link
+                href="/"
+                onClick={() => setIsMenuOpen(false)}
+                className={`block w-full text-left font-sans font-medium px-6 py-4 rounded-xl transition-colors text-lg ${pathname === "/" ? "text-forest-green bg-warm-cream" : "text-charcoal hover:bg-warm-cream"
                   }`}
               >
                 {t("nav.home")}
-              </button>
+              </Link>
               <div className="px-6">
-                <button
-                  onClick={() => {
-                    setCurrentPage("reservations")
-                    setIsMenuOpen(false)
-                  }}
-                  className="btn-primary w-full text-lg"
+                {/* Añadimos flex justify-center para asegurar que el botón Link llene el ancho en móvil */}
+                <Link
+                  href="/reservations"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="btn-primary w-full text-lg flex justify-center"
                 >
                   {t("nav.book")}
-                </button>
+                </Link>
               </div>
 
+              {/* Language switcher mobile (Se queda igual) */}
               <div className="flex space-x-3 pt-6 px-6 border-t border-sage-green/20">
                 {languages.map((lang) => (
                   <button

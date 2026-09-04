@@ -2,39 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-	.text-balance {
-		text-wrap: balance;
-	}
-}
-
+/* 1. VARIABLES DEL SISTEMA Y COLORES DE MARCA */
 @layer base {
 	:root {
 		--background: 0 0% 100%;
-		--foreground: 0 0% 3.9%;
+		--foreground: 240 10% 3.9%;
 		--card: 0 0% 100%;
-		--card-foreground: 0 0% 3.9%;
+		--card-foreground: 240 10% 3.9%;
 		--popover: 0 0% 100%;
-		--popover-foreground: 0 0% 3.9%;
-		--primary: 0 0% 9%;
+		--popover-foreground: 240 10% 3.9%;
+
+		/* Mapeo de marca: forest-green y sage-green integrados */
+		--primary: 142 11% 33%;
 		--primary-foreground: 0 0% 98%;
-		--secondary: 0 0% 96.1%;
-		--secondary-foreground: 0 0% 9%;
-		--muted: 0 0% 96.1%;
-		--muted-foreground: 0 0% 45.1%;
-		--accent: 0 0% 96.1%;
-		--accent-foreground: 0 0% 9%;
+		--secondary: 93 11% 48%;
+		--secondary-foreground: 240 10% 3.9%;
+
+		--muted: 240 4.8% 95.9%;
+		--muted-foreground: 240 3.8% 46.1%;
+		--accent: 240 4.8% 95.9%;
+		--accent-foreground: 240 5.9% 10%;
 		--destructive: 0 84.2% 60.2%;
 		--destructive-foreground: 0 0% 98%;
-		--border: 0 0% 89.8%;
-		--input: 0 0% 89.8%;
-		--ring: 0 0% 3.9%;
+		--border: 240 5.9% 90%;
+		--input: 240 5.9% 90%;
+		--ring: 142 11% 33%;
+		--radius: 0.75rem;
+
+		/* Variables de Sidebar/Gráficos originales intactas */
 		--chart-1: 12 76% 61%;
 		--chart-2: 173 58% 39%;
 		--chart-3: 197 37% 24%;
 		--chart-4: 43 74% 66%;
 		--chart-5: 27 87% 67%;
-		--radius: 0.5rem;
 		--sidebar-background: 0 0% 98%;
 		--sidebar-foreground: 240 5.3% 26.1%;
 		--sidebar-primary: 240 5.9% 10%;
@@ -44,7 +44,9 @@
 		--sidebar-border: 220 13% 91%;
 		--sidebar-ring: 217.2 91.2% 59.8%;
 	}
+
 	.dark {
+		/* ... (Mantenemos tus variables dark originales por si acaso) ... */
 		--background: 0 0% 3.9%;
 		--foreground: 0 0% 98%;
 		--card: 0 0% 3.9%;
@@ -64,72 +66,94 @@
 		--border: 0 0% 14.9%;
 		--input: 0 0% 14.9%;
 		--ring: 0 0% 83.1%;
-		--chart-1: 220 70% 50%;
-		--chart-2: 160 60% 45%;
-		--chart-3: 30 80% 55%;
-		--chart-4: 280 65% 60%;
-		--chart-5: 340 75% 55%;
-		--sidebar-background: 240 5.9% 10%;
-		--sidebar-foreground: 240 4.8% 95.9%;
-		--sidebar-primary: 224.3 76.3% 48%;
-		--sidebar-primary-foreground: 0 0% 100%;
-		--sidebar-accent: 240 3.7% 15.9%;
-		--sidebar-accent-foreground: 240 4.8% 95.9%;
-		--sidebar-border: 240 3.7% 15.9%;
-		--sidebar-ring: 217.2 91.2% 59.8%;
 	}
 }
 
+/* 2. REGLAS BASE DE ESTRUCTURA */
 @layer base {
+	html {
+		scroll-behavior: smooth;
+	}
+
+	body {
+		font-family:
+			-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+			'Droid Sans', 'Helvetica Neue', sans-serif;
+		color: #2c2c2c;
+		background-color: #ffffff;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		@apply bg-background text-foreground;
+	}
+
 	* {
 		@apply border-border;
 	}
-	body {
-		@apply bg-background text-foreground;
-	}
 }
 
+/* 3. COMPONENTES GLOBALES (Landing + Reservas unificados) */
 @layer components {
-	/* Título de los pasos */
-	.step-title {
-		@apply text-3xl font-sans font-bold text-forest-green mb-8 text-center;
-	}
-
-	/* Contenedor de botones de navegación */
-	.nav-container {
-		@apply mt-10 flex items-center transition-all;
-	}
-
-	/* Botón Principal (Siguiente/Confirmar) */
+	/* --- BOTONES --- */
 	.btn-primary {
-		@apply flex items-center justify-center gap-2 px-8 py-4 bg-forest-green text-white rounded-xl font-medium 
-           hover:bg-charcoal transition-all disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed;
+		@apply inline-flex items-center justify-center gap-2 px-8 py-4 bg-forest-green text-white rounded-xl font-sans font-semibold transition-all duration-300 transform hover:scale-105 hover:bg-charcoal hover:shadow-xl shadow-lg disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed disabled:transform-none disabled:shadow-none;
 	}
 
-	/* Botón de Volver/Anterior */
+	.btn-secondary {
+		@apply inline-flex items-center justify-center gap-2 bg-sage-green text-white px-6 py-3 rounded-xl font-sans font-medium hover:bg-sage-green/90 transition-all duration-300;
+	}
+
 	.btn-back {
 		@apply flex items-center gap-2 px-6 py-4 text-charcoal hover:bg-warm-cream rounded-xl transition-colors;
 	}
 
-	/* Inputs y Selects (Corrigiendo el fondo negro) */
-	.input-field {
-		@apply w-full p-4 rounded-xl border-2 border-sage-green/20 bg-white text-charcoal 
-           placeholder:text-sage-green/60 focus:border-forest-green focus:ring-0 outline-none transition-all mb-4;
+	/* --- LAYOUT DEL LANDING --- */
+	.section-padding {
+		@apply px-6 sm:px-8 lg:px-12 py-20 lg:py-32;
 	}
 
-	/* Tarjetas de Zona (Salón/Terraza) */
+	.section-spacing {
+		@apply mb-16 lg:mb-24;
+	}
+
+	.container {
+		@apply px-6 sm:px-8 lg:px-12;
+	}
+
+	.text-body {
+		@apply text-lg leading-relaxed;
+	}
+
+	.text-body-large {
+		@apply text-xl leading-relaxed;
+	}
+
+	.section-divider {
+		@apply h-px bg-gradient-to-r from-transparent via-sage-green/30 to-transparent my-16 lg:my-24;
+	}
+
+	/* --- FLUJO DE RESERVAS --- */
+	.step-title {
+		@apply text-3xl font-sans font-bold text-forest-green mb-8 text-center;
+	}
+
+	.nav-container {
+		@apply mt-10 flex items-center transition-all;
+	}
+
+	.input-field {
+		@apply w-full p-4 rounded-xl border-2 border-sage-green/20 bg-white text-charcoal placeholder:text-sage-green/60 focus:border-forest-green focus:ring-0 outline-none transition-all mb-4;
+	}
+
 	.zone-card {
-		@apply p-4 rounded-xl border-2 text-center transition-all font-bold text-charcoal border-sage-green/20 
-           hover:border-forest-green/50;
+		@apply p-4 rounded-xl border-2 text-center transition-all font-bold text-charcoal border-sage-green/20 hover:border-forest-green/50 cursor-pointer;
 	}
 
 	.zone-card.active {
 		@apply border-forest-green bg-forest-green text-white shadow-md;
 	}
 
-	/* Slots de Horas */
 	.time-slot {
-		@apply py-3 px-2 rounded-xl border-2 font-medium transition-all text-center text-sm;
+		@apply py-3 px-2 rounded-xl border-2 font-medium transition-all text-center text-sm cursor-pointer;
 	}
 
 	.time-slot.available {
@@ -148,13 +172,17 @@
 		@apply ring-4 ring-forest-green/20 border-forest-green bg-forest-green text-white;
 	}
 
-	/* Resumen Final */
 	.summary-card {
 		@apply bg-warm-cream p-6 rounded-2xl space-y-4 mb-10 text-charcoal border border-sage-green/10;
 	}
 
-	/* Banner de Error */
 	.error-banner {
 		@apply mb-6 bg-red-50 border border-red-200 text-red-600 p-4 rounded-xl flex items-center gap-3 text-sm font-medium;
+	}
+}
+
+@layer utilities {
+	.text-balance {
+		text-wrap: balance;
 	}
 }

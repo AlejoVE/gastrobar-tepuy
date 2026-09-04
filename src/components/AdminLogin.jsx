@@ -4,6 +4,8 @@
 import { motion } from 'framer-motion';
 import { Lock, Loader2, AlertCircle, ArrowRight } from 'lucide-react';
 import { useLogin } from '../hooks/useLogin';
+
+
 export const AdminLogin = ({ onLoginSuccess }) => {
     // Consumimos el estado y la lógica desde nuestro Hook
     const { password, setPassword, isLoading, error, handleLogin } = useLogin(onLoginSuccess);

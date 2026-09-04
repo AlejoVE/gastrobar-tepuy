@@ -1,3 +1,4 @@
+// src/views/ReservationsPage.jsx
 "use client"
 
 import { motion, AnimatePresence } from "framer-motion"
@@ -5,7 +6,7 @@ import { useReservation } from "../hooks/useReservation"
 
 import { Step1Date, Step2Table, Step3Details, Step4Confirm, BookingSuccess } from "../components/reservation-steps/ReservationSteps"
 
-const ReservationsPage = ({ setCurrentPage }) => {
+const ReservationsPage = () => {
   const reservationProps = useReservation()
   const { step, bookingSuccess } = reservationProps
 
@@ -16,7 +17,7 @@ const ReservationsPage = ({ setCurrentPage }) => {
   }
 
   if (bookingSuccess) {
-    return <BookingSuccess setCurrentPage={setCurrentPage} t={reservationProps.t} />
+    return <BookingSuccess t={reservationProps.t} />
   }
 
   return (

@@ -35,8 +35,8 @@ const Gallery = () => {
   ]
 
   return (
-    <section className="bg-soft-beige section-spacing">
-      <div className="container section-padding">
+    <section className="bg-soft-beige py-20 lg:py-32">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ const Gallery = () => {
           <p className="text-body-large leading-relaxed max-w-4xl mx-auto text-charcoal">{t("gallery.subtitle")}</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {galleryImages.map((image, index) => (
             <motion.div
               key={index}

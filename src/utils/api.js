@@ -135,7 +135,6 @@ export const getNormalizedAvailability = async (date, pax) => {
 };
 
 export const verifyAdminLogin = async (password) => {
-	console.log({ password });
 	// Usamos el endpoint de 'bookings' para el día de hoy como "ping" de prueba
 	const today = new Date().toISOString().split('T')[0];
 
@@ -150,6 +149,46 @@ export const verifyAdminLogin = async (password) => {
 
 	if (!response.ok) {
 		throw new Error('Contraseña incorrecta o no autorizada');
+	}
+
+	return await response.json();
+};
+
+export const fetchBookings = async (token, startDate, endDate) => {
+	// Usamos rutas relativas (con la barra inicial /) para pasar por tu proxy
+	const response = await fetch(`/api/n8n/admin/bookings?start=${startDate}&end=${endDate}`, {
+		method: 'GET',
+		headers: {
+			'Content-Type': 'application/json',
+			// Enviamos el token del sessionStorage, el proxy lo cambiará por la API KEY de n8n
+			'x-admin-password': token,
+		},
+	});
+
+	if (!response.ok) {
+		throw new Error('No se pudieron obtener las reservas.');
+	}
+
+	return await response.json();
+};
+
+export const updateAdminBooking = async (token, bookingId, updateData) => {
+	console.log({ token, bookingId, updateData });
+	// Usamos el proxy para enviar una petición POST a n8n para actualizar
+	const response = await fetch(`/api/n8n/admin/bookings/update`, {
+		method: 'PATCH',
+		headers: {
+			'Content-Type': 'application/json',
+			'x-admin-password': token,
+		},
+		body: JSON.stringify({
+			reservation_id: bookingId,
+			...updateData,
+		}),
+	});
+
+	if (!response.ok) {
+		throw new Error('No se pudo actualizar la reserva.');
 	}
 
 	return await response.json();

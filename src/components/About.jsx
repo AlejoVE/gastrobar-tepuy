@@ -14,8 +14,8 @@ const About = () => {
         { icon: Heart, key: "feature3" },
     ]
     return (
-        <section className="bg-warm-cream section-spacing">
-            <div className="container section-padding">
+        <section className="bg-warm-cream py-20 lg:py-32">
+            <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 50 }}
                     whileInView={{ opacity: 1, y: 0 }}

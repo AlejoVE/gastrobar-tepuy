@@ -2,6 +2,7 @@ import { ArrowRight, ArrowLeft, CheckCircle2, Loader2, AlertCircle } from "lucid
 import { motion } from "framer-motion"
 import Calendar from "../Calendar"
 import { TimeSlotSelector } from "../TimeSlotSelector"
+import Link from "next/link"
 
 const inputStyle = "w-full p-4 rounded-xl border-2 border-sage-green/20 bg-pure-white text-charcoal placeholder:text-sage-green/60 focus:border-forest-green focus:ring-0 outline-none transition-all"
 
@@ -157,15 +158,23 @@ export const Step4Confirm = ({ t, formData, prevStep, createBooking, isSubmittin
     </>
 )
 
-export const BookingSuccess = ({ setCurrentPage, t, modifyMessage = false }) => (
+export const BookingSuccess = ({ t, modifyMessage = false }) => (
     <div className="min-h-[80vh] flex flex-col items-center justify-center p-6 bg-pure-white">
         <motion.div initial={{ scale: 0.8, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-center">
             <CheckCircle2 size={80} className="text-forest-green mx-auto mb-6" />
-            <h2 className="text-4xl font-sans font-bold text-forest-green mb-4">{t(modifyMessage ? "modify_booking.modify_success_title" : "reservations.messages.success_title")}</h2>
-            <p className="text-lg text-charcoal mb-8">{t(modifyMessage ? "modify_booking.modify_success" : "reservations.messages.success_desc")}</p>
-            <button onClick={() => setCurrentPage("home")} className="px-8 py-4 bg-forest-green text-white rounded-xl hover:bg-charcoal transition-all font-medium">
+            <h2 className="text-4xl font-sans font-bold text-forest-green mb-4">
+                {t(modifyMessage ? "modify_booking.modify_success_title" : "reservations.messages.success_title")}
+            </h2>
+            <p className="text-lg text-charcoal mb-8">
+                {t(modifyMessage ? "modify_booking.modify_success" : "reservations.messages.success_desc")}
+            </p>
+
+            <Link
+                href="/"
+                className="inline-block px-8 py-4 bg-forest-green text-white rounded-xl hover:bg-charcoal transition-all font-medium"
+            >
                 {t("reservations.buttons.success_back")}
-            </button>
+            </Link>
         </motion.div>
     </div>
 )

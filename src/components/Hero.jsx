@@ -2,10 +2,13 @@ import React from 'react'
 import { useTranslation } from "react-i18next"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Link from "next/link"
+// ✨ Creamos un Link animado fusionando Next.js con Framer Motion
+const MotionLink = motion(Link);
 
-
-const Hero = ({ setCurrentPage }) => {
+const Hero = () => {
     const { t } = useTranslation()
+
     return (
         <section className="relative h-screen flex items-center justify-center overflow-hidden">
             {/* Background Image */}
@@ -36,8 +39,8 @@ const Hero = ({ setCurrentPage }) => {
                     </div>
                 </motion.div>
 
-                <motion.button
-                    onClick={() => setCurrentPage("reservations")}
+                <MotionLink
+                    href="/reservations"
                     className="bg-natural-wood hover:bg-natural-wood/90 text-white font-sans font-semibold text-xl px-12 py-5 rounded-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center space-x-3 shadow-xl"
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -47,7 +50,7 @@ const Hero = ({ setCurrentPage }) => {
                 >
                     <span>{t("hero.cta")}</span>
                     <ArrowRight size={22} />
-                </motion.button>
+                </MotionLink>
             </motion.div>
         </section>
     )

@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { Loader2 } from 'lucide-react';
-import { AdminLogin } from '../../components/AdminLogin';
-import { AdminDashboard } from '../../components/AdminDashboard.jsx'; // Lo crearemos en el siguiente paso
+import { AdminLogin } from '../../components/AdminLogin.jsx';
+import { AdminDashboard } from '../../components/AdminDashboard.jsx.jsx';
 
 export default function AdminPage() {
     const [token, setToken] = useState(null);

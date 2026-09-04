@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { LogOut, CalendarDays, Search, LayoutDashboard } from 'lucide-react';
+import { DailyAgenda } from './DailyAgenda.jsx'
 
 export const AdminDashboard = ({ token, onLogout }) => {
     // Estado para controlar qué "Pestaña" estamos viendo (Agenda o Buscador)
@@ -58,9 +59,7 @@ export const AdminDashboard = ({ token, onLogout }) => {
                     <div>
                         <h2 className="text-2xl font-bold text-forest-green mb-6">Agenda de Reservas</h2>
                         {/* Aquí inyectaremos el componente DailyAgenda que consumirá el webhook GET admin/bookings */}
-                        <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                            <p className="text-gray-500">Cargando vista de agenda...</p>
-                        </div>
+                        <DailyAgenda token={token} />
                     </div>
                 )}
 

@@ -14,8 +14,8 @@ const Menu = () => {
   if (!Array.isArray(menuCategories)) return null;
 
   return (
-    <section className="bg-pure-white section-spacing">
-      <div className="container section-padding">
+    <section className="bg-pure-white py-20 lg:py-32">
+      <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
