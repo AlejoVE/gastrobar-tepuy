@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
 				</Providers>
 
 				{/* Widget de Asistente de IA de Voz (ElevenLabs) */}
-				<elevenlabs-convai agent-id='agent_3201kn26q9byfnr9xjdt9hjzsh72'></elevenlabs-convai>
-				<Script src='https://unpkg.com/@elevenlabs/convai-widget-embed' strategy='lazyOnload' />
+				{/* <elevenlabs-convai agent-id='agent_3201kn26q9byfnr9xjdt9hjzsh72'></elevenlabs-convai> */}
+				{/* <Script src='https://unpkg.com/@elevenlabs/convai-widget-embed' strategy='lazyOnload' /> */}
 			</body>
 		</html>
 	);
